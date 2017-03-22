@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>购物车首页</title>
+    <link rel="stylesheet" href="css/weui.min.css">
+    <link rel="stylesheet" href="css/jquery-weui.min.css">
+    <link rel="stylesheet" href="css/mystyle.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="shopping-cart cr_page_grey">
+    <!--顶部标题栏start-->
+    <div class="cr_header_bar">
+        <div class="cr_header_bar_wrap">
+            <div class="cr-header-icon-back"><i></i></div>
+            <div class="cr_header_title">
+                购物车
+            </div>
+            <div class="cr_header_menu">
+                <a href="javascript:;" class="search_btn--navbar" id="J-search_btn--navbar"></a>
+            </div>
+        </div>
+    </div>
+    <!--顶部标题栏end-->
+    <!-- 遮罩层  -->
+    <div class="common-covermask jq_hidden"></div>
+    <!-- 右上角的导航菜单 -->
+    <div class="common-downsel__nav jq_hidden">
+        <ul>
+            <li>
+                <a href="">
+                    <i class="home-icon"></i> 首页
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="s-icon"></i>搜索</a>
+            </li>
+            <li>
+                <a href=""><i class="shopping-icon"></i>购物车</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="my-icon"></i>我的</a>
+            </li>
+        </ul>
+    </div>
+    <!--购物车为空 start-->
+    <div class="cart_no_product hidden">
+        <img src="images/no_shopcar.png" alt="">
+        <div class="cart_no_content">
+            <p>还没有商品，快去添加吧~</p>
+            <a class="go_home_btn" href="javascript:;">首页逛逛</a>
+            <a class="login_btn" href="javascript:;">登录</a>
+        </div>
+    </div>
+    <!--购物车为空 end-->
+    <div class="cart_has_product">
+        <div class="weui-cells weui-cells_checkbox cr_panel_item">
+            <div class="cr_check_item">
+                <label class="weui-cell weui-check__label cr_check_item__btn" for="s0">
+                    <div class="weui-cell__hd">
+                        <input type="checkbox" class="weui-check cr_brand_check" name="s0" id="s0" data-type="0">
+                        <i class="weui-icon-checked"></i>
+                    </div>
+                </label>
+                <div class="weui-cell__bd cr_brand_title">
+                    <span>梦芭莎</span>
+                    <a href="javascript:;" class="cr_operate_btn" data-type="0">编辑</a>
+                </div>
+            </div>
+            <div class="weui-panel weui-panel_access cr_product_panel" id="0">
+                <div class="weui-panel__bd">
+                    <div class="weui-cells weui-cells_checkbox">
+                        <a href="javascript:void(0);" class="weui-cell weui-cell_access weui-cell_link">
+                            <div class="weui-cell__bd cr_favour_tips">配送费10.00元，凑单免运费(还差12.00元)</div>
+                            <span class="weui-cell__ft"></span>
+                        </a>
+                        <div class="cr_main_item">
+                            <label class="weui-cell weui-check__label cr_product_label" for="s01">
+                                <div class="weui-cell__hd">
+                                    <input type="checkbox" class="weui-check" name="s01" id="s01">
+                                    <i class="weui-icon-checked"></i>
+                                </div>
+                            </label>
+                            <div class="weui-cell__bd">
+                                <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg cr_product_intro">
+                                    <div class="weui-media-box__hd cr_product_img_wrap">
+                                        <img class="weui-media-box__thumb cr_product_img" src="http://usr.im/60x80">
+                                    </div>
+                                    <div class="cr_content_wrap">
+                                        <div class="weui-media-box__bd cr_product_title">
+                                            <p class="weui-media-box__desc">精致浪漫拼雪纺假两件式精致浪漫拼雪纺假两件式</p>
+                                        </div>
+                                        <div class="cr_product_price">￥1139.00</div>
+                                    </div>
+                                </a>
+                                <!--编辑状态start-->
+                                <div class="weui-media-box weui-media-box_appmsg cr_product_edit hidden">
+                                    <div class="cr_edit_wrap">
+                                        <div class="weui-media-box__hd cr_product_img_wrap">
+                                            <img class="weui-media-box__thumb cr_product_img" src="http://usr.im/60x80">
+                                        </div>
+                                        <div class="cr_operate_wrap">
+                                            <div class="weui-media-box__bd cr_product_operate">
+                                                <div class="weui-media-box__desc">
+                                                    <div class="cr_sub_btn">-</div>
+                                                    <div class="cr_num_text"><input type="text" value="1"></div>
+                                                    <div class="cr_add_btn">+</div>
+                                                </div>
+                                                <p class="cr_property">
+                                                    <span>白色</span>
+                                                    <span>M</span>
+                                                    <i class="cr_property_edit"></i>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cr_delete_btn">删除</div>
+                                </div>
+                                <!--编辑状态end-->
+                            </div>
+                        </div>
+                        <div class="cr_main_item">
+                            <label class="weui-cell weui-check__label cr_product_label" for="s02">
+                                <div class="weui-cell__hd">
+                                    <input type="checkbox" class="weui-check" name="s02" id="s02">
+                                    <i class="weui-icon-checked"></i>
+                                </div>
+                            </label>
+                            <div class="weui-cell__bd">
+                                <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg cr_product_intro">
+                                    <div class="weui-media-box__hd cr_product_img_wrap">
+                                        <img class="weui-media-box__thumb cr_product_img" src="http://usr.im/60x80">
+                                    </div>
+                                    <div class="cr_content_wrap">
+                                        <div class="weui-media-box__bd cr_product_title">
+                                            <p class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
+                                            <p class="cr_property">
+                                                <span>白色</span>
+                                                <span>M</span>
+                                                <span>*1</span>
+                                            </p>
+                                        </div>
+                                        <div class="cr_product_price">￥39.00</div>
+                                    </div>
+                                </a>
+                                <!--编辑状态start-->
+                                <div class="weui-media-box weui-media-box_appmsg cr_product_edit hidden">
+                                    <div class="cr_edit_wrap">
+                                        <div class="weui-media-box__hd cr_product_img_wrap">
+                                            <img class="weui-media-box__thumb cr_product_img" src="http://usr.im/60x80">
+                                        </div>
+                                        <div class="cr_operate_wrap">
+                                            <div class="weui-media-box__bd cr_product_operate">
+                                                <div class="weui-media-box__desc">
+                                                    <div class="cr_sub_btn">-</div>
+                                                    <div class="cr_num_text"><input type="text" value="1"></div>
+                                                    <div class="cr_add_btn">+</div>
+                                                </div>
+                                                <p class="cr_property">
+                                                    <span>白色</span>
+                                                    <span>M</span>
+                                                    <i class="cr_property_edit"></i>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cr_delete_btn">删除</div>
+                                </div>
+                                <!--编辑状态end-->
+                            </div>
+                        </div>
+                        <div class="weui-cell weui-cell_access">
+                            <div class="weui-cell__hd"><span class="cr_yh_span">优惠</span></div>
+                            <div class="weui-cell__bd">
+                                <p><span class="mr10">满300减</span><span class="mr10">满299送</span><span class="mr10">满400折</span></p>
+                            </div>
+                            <div class="weui-cell__ft immediate_discount">即享优惠</div>
+                        </div>
+                        <div class="weui-cell">
+                            <div class="weui-cell__bd">
+                                <p class="cr_red_font">小计：<span>78.00</span>元</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="weui-cells weui-cells_checkbox cr_panel_item">
+            <div class="cr_check_item">
+                <label class="weui-cell weui-check__label cr_check_item__btn" for="s1">
+                <div class="weui-cell__hd">
+                    <input type="checkbox" class="weui-check cr_brand_check" name="s1" id="s1" data-type="1">
+                    <i class="weui-icon-checked"></i>
+                </div>
+            </label>
+                <div class="weui-cell__bd cr_brand_title">
+                    <span>卓图hitorat</span>
+                    <a href="javascript:;" class="cr_operate_btn" data-type="1">编辑</a>
+                </div>
+            </div>
+            <div class="weui-panel weui-panel_access cr_product_panel" id="1">
+                <div class="weui-panel__bd">
+                    <div class="weui-cells weui-cells_checkbox">
+                        <a href="javascript:void(0);" class="weui-cell weui-cell_access weui-cell_link">
+                            <div class="weui-cell__bd cr_favour_tips">配送费10.00元，凑单免运费(还差12.00元)</div>
+                            <span class="weui-cell__ft"></span>
+                        </a>
+                        <div class="cr_main_item">
+                            <label class="weui-cell weui-check__label cr_product_label" for="s11">
+                            <div class="weui-cell__hd">
+                                <input type="checkbox" class="weui-check" name="s11" id="s11">
+                                <i class="weui-icon-checked"></i>
+                            </div>
+                        </label>
+                            <div class="weui-cell__bd">
+                                <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg cr_product_intro">
+                                    <div class="weui-media-box__hd cr_product_img_wrap">
+                                        <img class="weui-media-box__thumb cr_product_img" src="http://usr.im/60x80">
+                                    </div>
+                                    <div class="cr_content_wrap">
+                                        <div class="weui-media-box__bd cr_product_title">
+                                            <p class="weui-media-box__desc">精致浪漫拼雪纺假两件式精致浪漫拼雪纺假两件式</p>
+                                        </div>
+                                        <div class="cr_product_price">￥1139.00</div>
+                                    </div>
+                                </a>
+                                <!--编辑状态start-->
+                                <div class="weui-media-box weui-media-box_appmsg cr_product_edit hidden">
+                                    <div class="cr_edit_wrap">
+                                        <div class="weui-media-box__hd cr_product_img_wrap">
+                                            <img class="weui-media-box__thumb cr_product_img" src="http://usr.im/60x80">
+                                        </div>
+                                        <div class="cr_operate_wrap">
+                                            <div class="weui-media-box__bd cr_product_operate">
+                                                <div class="weui-media-box__desc">
+                                                    <div class="cr_sub_btn">-</div>
+                                                    <div class="cr_num_text"><input type="text" value="1"></div>
+                                                    <div class="cr_add_btn">+</div>
+                                                </div>
+                                                <p class="cr_property">
+                                                    <span>白色</span>
+                                                    <span>M</span>
+                                                    <i class="cr_property_edit"></i>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cr_delete_btn">删除</div>
+                                </div>
+                                <!--编辑状态end-->
+                            </div>
+                        </div>
+
+                        <div class="cr_main_item">
+                            <label class="weui-cell weui-check__label cr_product_label" for="s12">
+                            <div class="weui-cell__hd">
+                                <input type="checkbox" class="weui-check" name="s12" id="s12">
+                                <i class="weui-icon-checked"></i>
+                            </div>
+                        </label>
+                            <div class="weui-cell__bd">
+                                <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg cr_product_intro">
+                                    <div class="weui-media-box__hd cr_product_img_wrap">
+                                        <img class="weui-media-box__thumb cr_product_img" src="http://usr.im/60x80">
+                                    </div>
+                                    <div class="cr_content_wrap">
+                                        <div class="weui-media-box__bd cr_product_title">
+                                            <p class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
+                                            <p class="cr_property">
+                                                <span>白色</span>
+                                                <span>M</span>
+                                                <span>*1</span>
+                                            </p>
+                                            <p><span class="cr_zp_span">赠品</span></p>
+                                        </div>
+                                        <div class="cr_product_price">￥39.00</div>
+                                    </div>
+                                </a>
+                                <!--编辑状态start-->
+                                <div class="weui-media-box weui-media-box_appmsg cr_product_edit hidden">
+                                    <div class="cr_edit_wrap">
+                                        <div class="weui-media-box__hd cr_product_img_wrap">
+                                            <img class="weui-media-box__thumb cr_product_img" src="http://usr.im/60x80">
+                                        </div>
+                                        <div class="cr_operate_wrap">
+                                            <div class="weui-media-box__bd cr_product_operate">
+                                                <div class="weui-media-box__desc">
+                                                    <div class="cr_sub_btn">-</div>
+                                                    <div class="cr_num_text"><input type="text" value="1"></div>
+                                                    <div class="cr_add_btn">+</div>
+                                                </div>
+                                                <p class="cr_property">
+                                                    <span>白色</span>
+                                                    <span>M</span>
+                                                    <i class="cr_property_edit"></i>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cr_delete_btn">删除</div>
+                                </div>
+                                <!--编辑状态end-->
+                            </div>
+                        </div>
+                        <div class="weui-cell weui-cell_access">
+                            <div class="weui-cell__hd"><span class="cr_yh_span">优惠</span></div>
+                            <div class="weui-cell__bd">
+                                <p>标题文字</p>
+                            </div>
+                            <div class="weui-cell__ft more_discount">更多优惠</div>
+                        </div>
+                        <div class="weui-cell">
+                            <div class="weui-cell__bd">
+                                <p class="cr_red_font">小计：<span>212.00</span>元</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="weui-cell cr_see_buy_title">
+        <i class="title_icon title_icon--buy"></i> 看了又买了
+    </div>
+    <div class="cr_panel_item--tj">
+        <div class="weui-cell cr_see_and_buy">
+            <div class="buy_img">
+                <img src="http://usr.im/60x80" alt="">
+            </div>
+            <p>看了该商品的人又买了</p>
+        </div>
+        <div class="cr_product_list clearfix">
+            <div class="product_item product_item--0">
+                <div class="product_img_wrap">
+                    <img src="http://usr.im/184x249" alt="">
+                </div>
+                <div class="product_info_wrap">
+                    <p>韩伊儿日韩高品质时尚彩色</p>
+                    <div class="product_price">
+                        <p>
+                            <span class="current_price">￥569</span>
+                            <span class="old_price">￥589</span>
+                        </p>
+                        <i class="icon_cart icon_cart--grey"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="product_item product_item--1">
+                <div class="product_img_wrap">
+                    <img src="http://usr.im/184x249" alt="">
+                </div>
+                <div class="product_info_wrap">
+                    <p>韩伊儿日韩高品质时尚彩色</p>
+                    <div class="product_price">
+                        <p>
+                            <span class="current_price">￥569</span>
+                            <span class="old_price">￥589</span>
+                        </p>
+                        <i class="icon_cart icon_cart--grey"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="product_item product_item--0">
+                <div class="product_img_wrap">
+                    <img src="http://usr.im/184x249" alt="">
+                </div>
+                <div class="product_info_wrap">
+                    <p>韩伊儿日韩高品质时尚彩色</p>
+                    <div class="product_price">
+                        <p>
+                            <span class="current_price">￥569</span>
+                            <span class="old_price">￥589</span>
+                        </p>
+                        <i class="icon_cart icon_cart--grey"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="product_item product_item--1">
+                <div class="product_img_wrap">
+                    <img src="http://usr.im/184x249" alt="">
+                </div>
+                <div class="product_info_wrap">
+                    <p>韩伊儿日韩高品质时尚彩色</p>
+                    <div class="product_price">
+                        <p>
+                            <span class="current_price">￥569</span>
+                            <span class="old_price">￥589</span>
+                        </p>
+                        <i class="icon_cart icon_cart--grey"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cr_panel_item--tj">
+        <div class="weui-cell cr_see_and_buy">
+            <div class="buy_img">
+                <img src="http://usr.im/60x80" alt="">
+            </div>
+            <p>看了该商品的人又买了</p>
+        </div>
+        <div class="cr_product_list clearfix">
+            <div class="product_item product_item--0">
+                <div class="product_img_wrap">
+                    <img src="http://usr.im/184x249" alt="">
+                </div>
+                <div class="product_info_wrap">
+                    <p>韩伊儿日韩高品质时尚彩色</p>
+                    <div class="product_price">
+                        <p>
+                            <span class="current_price">￥569</span>
+                            <span class="old_price">￥589</span>
+                        </p>
+                        <i class="icon_cart icon_cart--grey"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="product_item product_item--1">
+                <div class="product_img_wrap">
+                    <img src="http://usr.im/184x249" alt="">
+                </div>
+                <div class="product_info_wrap">
+                    <p>韩伊儿日韩高品质时尚彩色</p>
+                    <div class="product_price">
+                        <p>
+                            <span class="current_price">￥569</span>
+                            <span class="old_price">￥589</span>
+                        </p>
+                        <i class="icon_cart icon_cart--grey"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="product_item product_item--0">
+                <div class="product_img_wrap">
+                    <img src="http://usr.im/184x249" alt="">
+                </div>
+                <div class="product_info_wrap">
+                    <p>韩伊儿日韩高品质时尚彩色</p>
+                    <div class="product_price">
+                        <p>
+                            <span class="current_price">￥569</span>
+                            <span class="old_price">￥589</span>
+                        </p>
+                        <i class="icon_cart icon_cart--grey"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="product_item product_item--1">
+                <div class="product_img_wrap">
+                    <img src="http://usr.im/184x249" alt="">
+                </div>
+                <div class="product_info_wrap">
+                    <p>韩伊儿日韩高品质时尚彩色</p>
+                    <div class="product_price">
+                        <p>
+                            <span class="current_price">￥569</span>
+                            <span class="old_price">￥589</span>
+                        </p>
+                        <i class="icon_cart icon_cart--grey"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="weui-cell cr_see_buy_title">
+        <i class="title_icon title_icon--like"></i> 猜你喜欢
+    </div>
+    <div class="cr_panel_item--tj">
+        <div class="weui-cell cr_see_and_buy">
+            <div class="buy_img">
+                <img src="http://usr.im/60x80" alt="">
+            </div>
+            <p>看了该商品的人又买了</p>
+        </div>
+        <div class="cr_product_list clearfix">
+            <div class="product_item product_item--0">
+                <div class="product_img_wrap">
+                    <img src="http://usr.im/184x249" alt="">
+                </div>
+                <div class="product_info_wrap">
+                    <p>韩伊儿日韩高品质时尚彩色</p>
+                    <div class="product_price">
+                        <p>
+                            <span class="current_price">￥569</span>
+                            <span class="old_price">￥589</span>
+                        </p>
+                        <i class="icon_cart icon_cart--grey"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="product_item product_item--1">
+                <div class="product_img_wrap">
+                    <img src="http://usr.im/184x249" alt="">
+                </div>
+                <div class="product_info_wrap">
+                    <p>韩伊儿日韩高品质时尚彩色</p>
+                    <div class="product_price">
+                        <p>
+                            <span class="current_price">￥569</span>
+                            <span class="old_price">￥589</span>
+                        </p>
+                        <i class="icon_cart icon_cart--grey"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="product_item product_item--0">
+                <div class="product_img_wrap">
+                    <img src="http://usr.im/184x249" alt="">
+                </div>
+                <div class="product_info_wrap">
+                    <p>韩伊儿日韩高品质时尚彩色</p>
+                    <div class="product_price">
+                        <p>
+                            <span class="current_price">￥569</span>
+                            <span class="old_price">￥589</span>
+                        </p>
+                        <i class="icon_cart icon_cart--grey"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="product_item product_item--1">
+                <div class="product_img_wrap">
+                    <img src="http://usr.im/184x249" alt="">
+                </div>
+                <div class="product_info_wrap">
+                    <p>韩伊儿日韩高品质时尚彩色</p>
+                    <div class="product_price">
+                        <p>
+                            <span class="current_price">￥569</span>
+                            <span class="old_price">￥589</span>
+                        </p>
+                        <i class="icon_cart icon_cart--grey"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cr_blank"></div>
+    <div class="weui-cells weui-cells_checkbox cr_check_all_block">
+        <label class="weui-cell weui-check__label" for="sall">
+            <div class="weui-cell__hd">
+                <input type="checkbox" class="weui-check" name="all" id="sall">
+                <i class="weui-icon-checked"></i>
+            </div>
+        </label>
+        <div class="weui-cell__bd cr_check_all_content">
+            <div>
+                <p>全选</p>
+            </div>
+            <div class="f1 cr_price">
+                <p class="cr_all_price">合计：696.00</p>
+                <p class="cr_yh_price">已减100元</p>
+            </div>
+            <div class="f1 cr_balance_btn">
+                <a href="">去结算(10)</a>
+            </div>
+        </div>
+    </div>
+    <!--删除弹窗-->
+    <div class="weui-mask cr_prompt_mask weui-mask--hidden"></div>
+    <div class="weui-dialog weui-dialog--hidden cr_dialog">
+        <div class="weui-dialog__hd">
+            <strong class="weui-dialog__title">确定要删除这个商品吗？</strong>
+        </div>
+        <div class="weui-dialog__bd">
+            <div class="weui-cells_checkbox">
+                <label class="weui-cell weui-check__label cr_dialog_label" for="collect">
+                    <div class="weui-cell__hd">
+                        <input type="checkbox" class="weui-check" name="checkbox1" id="collect" checked="checked">
+                        <i class="weui-icon-checked"></i>
+                    </div>
+                    <p>移入收藏夹</p>
+                </label>
+            </div>
+
+        </div>
+        <div class="weui-dialog__ft">
+            <a href="javascript:;" class="weui-dialog__btn default">取消</a>
+            <a href="javascript:;" class="weui-dialog__btn primary">确定</a>
+        </div>
+    </div>
+    <!--商品属性选择ActionSheet-->
+    <div class="weui-mask cr_action_mask weui-mask--hidden"></div>
+    <div class="weui-actionsheet  weui-actionsheet_hidden" id="propertyActionSheet">
+        <div class="weui-actionsheet__menu">
+            <div class="weui-media-box weui-media-box_appmsg cr_product_intro cr_intro_item">
+                <div class="weui-media-box__hd cr_product_img_wrap">
+                    <img class="weui-media-box__thumb cr_product_img" src="http://usr.im/60x80">
+                </div>
+                <div class="cr_content_wrap">
+                    <div class="weui-media-box__bd cr_product_title">
+                        <p class="weui-media-box__desc cr_red_font">￥<span class="lg_font">139</span>.00</p>
+                        <p class="cr_property">当前有货</p>
+                        <p class="cr_property">已选 <label class="cr_size">"S"</label><label class="cr_color">"白色"</label></p>
+                    </div>
+                    <div class="cr_product_price" id="propertyAsCancel"><i class="weui-icon-cancel"></i></div>
+                </div>
+            </div>
+            <div class="cr_intro_item">
+                <h2>尺码</h2>
+                <p class="cr_size_list">
+                    <label for="rs0" class="active">
+                        S
+                        <input type="radio" id="rs0" name="rs" checked="checked" value="S">
+                    </label>
+                    <label for="rs1">
+                        M
+                        <input type="radio" id="rs1" name="rs" value="M">
+                    </label>
+                    <label for="rs2">
+                        L
+                        <input type="radio" id="rs2" name="rs" value="L">
+                    </label>
+                    <label for="rs3">
+                        XL
+                        <input type="radio" id="rs3" name="rs" value="XL">
+                    </label>
+                </p>
+
+            </div>
+            <div class="cr_intro_item">
+                <h2>颜色</h2>
+                <p class="cr_color_list">
+                    <label for="rc0" class="active">
+                        浅蓝色
+                        <input type="radio" id="rc0" name="rc" checked="checked" value="浅蓝色">
+                    </label>
+                    <label for="rc1">
+                        白色
+                        <input type="radio" id="rc1" name="rc" value="白色">
+                    </label>
+                </p>
+            </div>
+            <div class="cr_intro_item cr_intro_item--account" id="crAsAccount">
+                <h2>购买数量</h2>
+                <div class="cr_operate_wrap">
+                    <div class="weui-media-box__bd cr_product_operate">
+                        <div class="weui-media-box__desc cr_property_account">
+                            <div class="cr_sub_btn">-</div>
+                            <div class="cr_num_text"><input type="text" value="1"></div>
+                            <div class="cr_add_btn">+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button class="cr_property_confirm">确定</button>
+            </div>
+        </div>
+    </div>
+    <!--商品属性选择ActionSheet end-->
+
+    <!--参与优惠ActionSheet start-->
+    <div class="weui-mask cr_discount_mask weui-mask--hidden"></div>
+    <div class="weui-actionsheet  weui-actionsheet_hidden cr_discount_actionsheet" id="discountActionSheet">
+        <div class="weui-actionsheet__menu weui-cell_access">
+            <div class="weui-media-box weui-media-box_appmsg cr_product_intro cr_intro_item">
+                <h1 class="cr_discount_title">参与优惠</h1>
+                <div class="cr_icon_cancel"><i class="weui-icon-cancel"></i></div>
+            </div>
+            <div class="cr_intro_item">
+                <span class="cr_yh_span">满减</span>
+                <p>梦芭莎自发货产品满300减100；满600减200；满900减300；满1200减400</p>
+                <div class="weui-cell__ft"></div>
+            </div>
+            <div class="cr_intro_item">
+                <span class="cr_yh_span">满赠</span>
+                <p>梦芭莎自发货产品满300减100；满600减200；满900减300；满1200减400</p>
+                <div class="weui-cell__ft"></div>
+            </div>
+            <div class="cr_intro_item">
+                <span class="cr_yh_span">换购</span>
+                <p>梦芭莎自发货产品满300减100；满600减200；满900减300；满1200减400</p>
+                <div class="weui-cell__ft"></div>
+            </div>
+            <div class="cr_gift_list">
+                <a class="cr_gift_item" href="javascript:;">
+                    <img src="http://usr.im/90x120" alt="">
+                </a>
+                <a class="cr_gift_item" href="javascript:;">
+                    <img src="http://usr.im/90x120" alt="">
+                </a>
+                <a class="cr_gift_item" href="javascript:;">
+                    <img src="http://usr.im/90x120" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+    <!--参与优惠ActionSheet end-->
+    <!--优惠券优惠卡ActionSheet start-->
+    <div class="weui-mask cr_coupon_mask weui-mask--hidden"></div>
+    <div class="weui-actionsheet  weui-actionsheet_hidden cr_coupon_actionsheet" id="couponActionSheet">
+        <div class="weui-actionsheet__menu weui-cell_access">
+            <div class="weui-media-box weui-media-box_appmsg cr_product_intro cr_intro_item">
+                <h1 class="cr_discount_title cr_discount_title--pd">优惠券</h1>
+                <div class="cr_icon_cancel"><i class="weui-icon-cancel"></i></div>
+            </div>
+            <ul class="wy-coupon__list">
+                <li class="coupon__item">
+                    <a href="" class="coupon-a">
+                        <!--
+                            coupon-gray: 代表过期
+                            coupon-purple: 代表 自营类
+                            coupon-green: 代表全品类
+                            coupon-orange: 代表受限商店
+                         -->
+                        <div class="coupon-left coupon-gray">
+                            <div class="change-block">
+                                <div class="pro-price">
+                                    <span class="price-sign">¥</span>
+                                    <span class="big-price">5000</span>
+                                </div>
+                                <div class="price-info">
+                                    满500.00可用
+                                </div>
+                            </div>
+                        </div>
+                        <div class="coupon-right">
+                            <div class="pro-content">
+                                <div class="pro-tt">自营类(部分商品除)自营类(部分商品除)</div>
+                                <div class="pro-hd">
+                                    有效期: <br/> 2016.11.16 - 2017.02.27
+                                </div>
+                                <div class="pro-ft">备注:生日礼券自营类(部分商品除)自营类(部分商品除)</div>
+                            </div>
+                            <!--<div class="pro-btn">
+                                <span>立即使用</span>
+                            </div>-->
+
+                            <!-- 购物车里面使用的是下面这个 -->
+                            <div class="pro-btn--vertical">
+                                <span>立即使用</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <h1 class="cr_discount_title card_title">优惠卡</h1>
+            <ul class="wy-coupon__list wy-coupon__list--card">
+                <li class="coupon__item">
+                    <a href="" class="coupon-a">
+                        <!--
+                            coupon-gray: 代表过期
+                            coupon-purple: 代表 自营类
+                            coupon-green: 代表全品类
+                            coupon-orange: 代表受限商店
+                         -->
+                        <div class="coupon-left coupon-gray">
+                            <div class="change-block">
+                                <div class="pro-price">
+                                    <span class="price-sign">¥</span>
+                                    <span class="big-price">5000</span>
+                                </div>
+                                <div class="price-info">
+                                    满500.00可用
+                                </div>
+                            </div>
+                        </div>
+                        <div class="coupon-right">
+                            <div class="pro-content">
+                                <div class="pro-tt">自营类(部分商品除)自营类(部分商品除)</div>
+                                <div class="pro-hd">
+                                    有效期: <br/> 2016.11.16 - 2017.02.27
+                                </div>
+                                <div class="pro-ft">备注:生日礼券自营类(部分商品除)自营类(部分商品除)</div>
+                            </div>
+                            <!--<div class="pro-btn">
+                                <span>立即使用</span>
+                            </div>-->
+                            <!-- 购物车里面使用的是下面这个 -->
+                            <div class="pro-btn--vertical">
+                                <span>立即使用</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--优惠券优惠卡ActionSheet end-->
+    <script src="js/jquery-2.1.4.js"></script>
+    <script src="js/jquery-weui.min.js"></script>
+    <script src="js/fastclick.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+        $(function() {
+                FastClick.attach(document.body);
+                var $searchBtnNavbar = $('#J-search_btn--navbar');
+                var $commonDownselNav = $('.common-downsel__nav');
+                var $commonCovermask = $('.common-covermask');
+                // 点击右手边的导航菜单
+                $searchBtnNavbar.on('click', function() {
+                    $commonDownselNav.removeClass('jq_hidden');
+                    $commonCovermask.removeClass('jq_hidden');
+                });
+                // 点击遮罩层隐藏导航菜单
+                $commonCovermask.on('click', function() {
+                    $commonDownselNav.addClass('jq_hidden');
+                    $commonCovermask.addClass('jq_hidden');
+                });
+                $(".cr_product_edit").each(function(index, element) {
+                    changeAccount(element);
+                })
+            })
+            /*全选*/
+        $("#sall").click(function() {
+                $('input[name^="s"]').prop("checked", this.checked);
+            })
+            /*同品牌全选*/
+        $(".cr_brand_check").each(function() {
+                $(this).on('click', function() {
+                    var id = $(this).attr("data-type");
+                    $("#" + id + " input[type='checkbox']").prop("checked", this.checked)
+                })
+            })
+            /*点击编辑*/
+        $('.cr_operate_btn').each(function(index) {
+            $(this).on('click', function() {
+                var id = $(this).attr("data-type");
+                if ($(this).text() == "编辑") {
+                    $(this).text("完成");
+                    $("#" + id + " .cr_product_intro").addClass("hidden");
+                    $("#" + id + " .cr_product_edit").removeClass("hidden");
+                } else {
+                    $(this).text("编辑");
+                    $("#" + id + " .cr_product_edit").addClass("hidden");
+                    $("#" + id + " .cr_product_intro").removeClass("hidden");
+                }
+
+            })
+        })
+
+        /*商品删除*/
+        $(".cr_delete_btn").each(function() {
+                $(this).on('click', function() {
+                    openModal();
+                })
+            })
+            /*确定删除与取消删除事件*/
+        $(".cr_dialog .weui-dialog__ft").on('click', function(e) {
+            closeModal();
+            if (e.target && e.target.nodeName == "A") {
+                var classes = e.target.className.split(" ");
+                if (classes) {
+                    for (var x = 0; x < classes.length; x++) {
+                        if (classes[x] == "primary") {
+                            console.log("确定事件！");
+                        } else if (classes[x] == "default") {
+                            console.log("取消事件！")
+                        }
+                    }
+                }
+            }
+        })
+        $(".cr_prompt_mask").on('click', function() {
+            closeModal();
+        })
+
+        /*商品属性选择*/
+        $(".cr_property_edit").on('click', function() {
+            openPropertyActionSheet("#propertyActionSheet", $(this))
+
+        })
+
+        /*即享优惠*/
+        $(".immediate_discount").each(function() {
+            $(this).on('click', function() {
+                openActionSheet("#discountActionSheet");
+            })
+        })
+        $(".cr_discount_mask").on('click', function() {
+            closeActionSheet("#discountActionSheet");
+        })
+        $("#discountActionSheet .weui-icon-cancel").on('click', function() {
+            closeActionSheet("#discountActionSheet");
+        })
+
+        //更多优惠
+        $(".more_discount").each(function() {
+            $(this).on('click', function() {
+                openActionSheet("#couponActionSheet");
+            })
+        })
+        $(".cr_coupon_mask").on('click', function() {
+            closeActionSheet("#couponActionSheet");
+        })
+        $("#couponActionSheet .weui-icon-cancel").on('click', function() {
+            closeActionSheet("#couponActionSheet");
+        })
+
+        /*加入购物车*/
+        $(".icon_cart").each(function() {
+                $(this).on('click', function() {
+                    openPropertyActionSheet("#propertyActionSheet")
+                })
+            })
+            /**
+             * 打开弹窗
+             */
+        function openModal() {
+            $(".cr_prompt_mask").removeClass("weui-mask--hidden");
+            $(".cr_prompt_mask").addClass("weui-mask--visible");
+            $(".weui-dialog").removeClass("weui-dialog--hidden");
+            $(".weui-dialog").addClass("weui-dialog--visible");
+        }
+        /**
+         * 关闭弹窗
+         */
+        function closeModal() {
+            $(".cr_prompt_mask").removeClass("weui-mask--visible");
+            $(".cr_prompt_mask").addClass("weui-mask--hidden");
+            $(".weui-dialog").removeClass("weui-dialog--visible");
+            $(".weui-dialog").addClass("weui-dialog--hidden");
+        }
+        /**
+         * 打开actionsheet
+         */
+        function openActionSheet(ele) {
+            var mask = $(ele).prev(".weui-mask"),
+                weuiActionsheet = $(ele);
+            weuiActionsheet.removeClass("weui-actionsheet_hidden");
+            weuiActionsheet.addClass("weui-actionsheet_toggle");
+            mask.removeClass("weui-mask--hidden");
+            mask.addClass("weui-mask--visible");
+        }
+
+        function closeActionSheet(ele) {
+            var mask = $(ele).prev(".weui-mask"),
+                weuiActionsheet = $(ele);
+            weuiActionsheet.removeClass('weui-actionsheet_toggle');
+            mask.removeClass('weui-mask--visible');
+            mask.removeClass("weui-mask--visible");
+            mask.addClass("weui-mask--hidden");
+        }
+    </script>
+</body>
+
+</html>

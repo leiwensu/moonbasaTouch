@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>搜索页列表页</title>
+    <link rel="stylesheet" href="css/weui.min.css">
+    <link rel="stylesheet" href="css/jquery-weui.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="common-header__wrapper m-search_list">
+        <!-- 搜索框 -->
+        <div class="m-search_header bdb1px">
+            <a href="javascript:history.go(-1)" class="icon-back"></a>
+            <section class="search_form">
+                <form action="">
+                    <div class="search_form--inner">
+                        <i class="weui-icon-search"></i>
+                        <input name="search" type="text" id="J-search_form--input" class="search_form--input" value="新品">
+                    </div>
+                </form>
+            </section>
+            <a href="javascript:;" class="search_btn--navbar" id="J-search_btn--navbar"></a>
+            <a href="javascript:;" class="search_btn displayNone" id="J-search_btn">搜索</a>
+            <!-- 右上角的导航菜单 -->
+            <div class="common-downsel__nav displayNone">
+                <ul>
+                    <li>
+                        <a href="">
+                            <i class="home-icon"></i> 首页
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="s-icon"></i>搜索</a>
+                    </li>
+                    <li>
+                        <a href=""><i class="shopping-icon"></i>购物车</a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="my-icon"></i>我的</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 搜索内容 -->
+        <div class="m-search_wrapper displayNone" id="J-search_wrapper">
+            <section class="m-search_con">
+                <!-- 热门搜索 -->
+                <div class="hot-search">
+                    <h3 class="m-common_title">热门搜索</h3>
+                    <div class="hot-search-tags">
+                        <a class="hot-search__tag" href="javascript:void(0);">
+                            <span>
+                                手套女
+                            </span>
+                        </a>
+                        <a class="hot-search__tag" href="javascript:void(0);">
+                            <span>
+                                棉拖鞋
+                            </span>
+                        </a>
+                        <a class="hot-search__tag" href="javascript:void(0);">
+                            <span>
+                                保暖打底
+                            </span>
+                        </a>
+                        <a class="hot-search__tag" href="javascript:void(0);">
+                            <span>
+                                棉拖鞋
+                            </span>
+                        </a>
+                        <a class="hot-search__tag" href="javascript:void(0);">
+                            <span>
+                                保暖打底
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <!-- 搜索历史 -->
+                <div class="history-search">
+                    <h3 class="m-common_title">搜索历史</h3>
+                    <div class="m-bd1 bdb1px"></div>
+                    <div class="item-list">
+                        <a href="javascript:;" class="history-search_text">礼包</a>
+                        <i class="weui-icon-cancel"></i>
+                    </div>
+                    <div class="item-list">
+                        <a href="javascript:;" class="history-search_text">礼包</a>
+                        <i class="weui-icon-cancel"></i>
+                    </div>
+                    <div class="item-list">
+                        <a href="javascript:;" class="history-search_text">礼包</a>
+                        <i class="weui-icon-cancel"></i>
+                    </div>
+                    <div class="item-list">
+                        <a href="javascript:;" class="history-search_text">礼包</a>
+                        <i class="weui-icon-cancel"></i>
+                    </div>
+                    <!-- 清空历史搜索 -->
+                    <div class="history-search_clear">
+                        <span class="clear-btn">清空历史搜索</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- tab切换 -->
+        <section class="m-search_listcon">
+            <div class="weui-tab">
+                <div class="weui-navbar">
+                    <a href="#tab1" onclick="return false;" class="weui-navbar__item new-change-eleven weui-bar__item--on">
+                        <span>综合</span>
+                    </a>
+                    <a href="#tab2" onclick="return false;" class="weui-navbar__item new-change-eleven">
+                        <span>新品</span>
+                    </a>
+                    <a href="#tab3" onclick="return false;" class="weui-navbar__item new-change-eleven">
+                        <span>销量</span>
+                    </a>
+                    <a href="#tab4" onclick="return false;" class="weui-navbar__item new-sort-price">
+                        <!-- 向上class为 arrow-down 向下为arrow-up -->
+                        <span>
+                            价格
+                        </span>
+                    </a>
+                    <a href="javascript:;" class="weui-navbar__item" id="searchSort">
+                        筛选
+                    </a>
+                </div>
+                <!-- 这里是 购物车凑单页 独有的-->
+                <div class="wy-onsale__title bdb1px">
+                    优惠活动: 千金本草、HERBAL SECRET\花费草满59赠山茶花陪到家啦垃圾分类
+                </div>
+                <!-- 这里是 购物车凑单页 独有的-->
+                <div class="weui-tab__bd">
+                    <!-- 这里是上面的a 锚点控制的 ，对应id -->
+                    <div id="tab1" class="weui-tab__bd-item weui-tab__bd-item--active">
+                        <ul class="searchlist">
+                            <li class="pic-list">
+                                <a href="" class="card-border">
+                                    <div class="pic-list-div">
+                                        <img width="100%" src="https://m.360buyimg.com/mobilecms/s357x458_jfs/t2674/82/4165920443/506397/10fc37da/57ad8369N3a39b1d7.jpg!cc_357x458!q50.jpg">
+                                    </div>
+                                    <div class="product-content-box">
+                                        <div class="pic-list-name">
+                                            <span>杉杉男款长袖男士纯白衬衫杉杉男款长袖男士纯白衬衫杉杉男款长袖男士纯白衬衫</span>
+                                        </div>
+                                        <div class="price-auther-sam">
+                                            <div class="pic-list-price">¥239.00</div>
+                                            <div class="evaluate-self">
+                                                <!--月销量 : 1000-->
+                                                <!-- 购物车按钮开始 -->
+                                                <div class="wy-shopping_cart_discount" onclick="console.log('aa');return false;">
+                                                    <img src="./images/shopping_cart_discount.png" alt="">
+                                                </div>
+                                                <!-- 购物车按钮结束 -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="pic-list">
+                                <a href="" class="card-border">
+                                    <div class="pic-list-div">
+                                        <img width="100%" src="https://m.360buyimg.com/mobilecms/s357x458_jfs/t2674/82/4165920443/506397/10fc37da/57ad8369N3a39b1d7.jpg!cc_357x458!q50.jpg">
+                                    </div>
+                                    <div class="product-content-box">
+                                        <div class="pic-list-name">
+                                            <span>杉杉男款长袖男士纯白衬衫杉杉男款长袖男士纯白衬衫杉杉男款长袖男士纯白衬衫</span>
+                                        </div>
+                                        <div class="price-auther-sam">
+                                            <div class="pic-list-price">
+                                                ¥239.00
+                                            </div>
+                                            <div class="evaluate-self">
+                                                月销量 : 1000
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="pic-list">
+                                <a href="" class="card-border">
+                                    <div class="pic-list-div">
+                                        <img width="100%" src="https://m.360buyimg.com/mobilecms/s357x458_jfs/t2674/82/4165920443/506397/10fc37da/57ad8369N3a39b1d7.jpg!cc_357x458!q50.jpg">
+                                    </div>
+                                    <div class="product-content-box">
+                                        <div class="pic-list-name">
+                                            <span>杉杉男款长袖男士纯白衬衫杉杉男款长袖男士纯白衬衫杉杉男款长袖男士纯白衬衫</span>
+                                        </div>
+                                        <div class="price-auther-sam">
+                                            <div class="pic-list-price">
+                                                ¥239.00
+                                            </div>
+                                            <div class="evaluate-self">
+                                                月销量 : 1000
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="pic-list">
+                                <a href="" class="card-border">
+                                    <div class="pic-list-div">
+                                        <img width="100%" src="https://m.360buyimg.com/mobilecms/s357x458_jfs/t2674/82/4165920443/506397/10fc37da/57ad8369N3a39b1d7.jpg!cc_357x458!q50.jpg">
+                                    </div>
+                                    <div class="product-content-box">
+                                        <div class="pic-list-name">
+                                            <span>杉杉男款长袖男士纯白衬衫杉杉男款长袖男士纯白衬衫杉杉男款长袖男士纯白衬衫</span>
+                                        </div>
+                                        <div class="price-auther-sam">
+                                            <div class="pic-list-price">
+                                                ¥239.00
+                                            </div>
+                                            <div class="evaluate-self">
+                                                月销量 : 1000
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="tab2" class="weui-tab__bd-item">
+                        <ul class="searchlist">
+                            <li class="pic-list">
+                                <a href="" class="card-border">
+                                    <div class="pic-list-div">
+                                        <img width="100%" src="https://m.360buyimg.com/mobilecms/s357x458_jfs/t2593/1/493941331/99288/a408559d/57170f36Nfb3a911c.jpg!cc_357x458!q50.jpg">
+                                    </div>
+                                    <div class="product-content-box">
+                                        <div class="pic-list-name">
+                                            <span>杉杉男款长袖男士纯白衬衫杉杉男款长袖男士纯白衬衫杉杉男款长袖男士纯白衬衫</span>
+                                        </div>
+                                        <div class="price-auther-sam">
+                                            <div class="pic-list-price">
+                                                ¥239.00
+                                            </div>
+                                            <div class="evaluate-self">
+                                                月销量 : 1000
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="pic-list">
+                                <a href="" class="card-border">
+                                    <div class="pic-list-div">
+                                        <img width="100%" src="https://m.360buyimg.com/mobilecms/s357x458_jfs/t2593/1/493941331/99288/a408559d/57170f36Nfb3a911c.jpg!cc_357x458!q50.jpg">
+                                    </div>
+                                    <div class="product-content-box">
+                                        <div class="pic-list-name">
+                                            <span>杉杉男款长袖男士纯白衬衫杉杉男款长袖男士纯白衬衫杉杉男款长袖男士纯白衬衫</span>
+                                        </div>
+                                        <div class="price-auther-sam">
+                                            <div class="pic-list-price">
+                                                ¥239.00
+                                            </div>
+                                            <div class="evaluate-self">
+                                                月销量 : 1000
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="pic-list">
+                                <a href="" class="card-border">
+                                    <div class="pic-list-div">
+                                        <img width="100%" src="https://m.360buyimg.com/mobilecms/s357x458_jfs/t2593/1/493941331/99288/a408559d/57170f36Nfb3a911c.jpg!cc_357x458!q50.jpg">
+                                    </div>
+                                    <div class="product-content-box">
+                                        <div class="pic-list-name">
+                                            <span>杉杉男款长袖男士纯白衬衫杉杉男款长袖男士纯白衬衫杉杉男款长袖男士纯白衬衫</span>
+                                        </div>
+                                        <div class="price-auther-sam">
+                                            <div class="pic-list-price">
+                                                ¥239.00
+                                            </div>
+                                            <div class="evaluate-self">
+                                                月销量 : 1000
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="pic-list">
+                                <a href="" class="card-border">
+                                    <div class="pic-list-div">
+                                        <img width="100%" src="https://m.360buyimg.com/mobilecms/s357x458_jfs/t2593/1/493941331/99288/a408559d/57170f36Nfb3a911c.jpg!cc_357x458!q50.jpg">
+                                    </div>
+                                    <div class="product-content-box">
+                                        <div class="pic-list-name">
+                                            <span>杉杉男款长袖男士纯白衬衫杉杉男款长袖男士纯白衬衫杉杉男款长袖男士纯白衬衫</span>
+                                        </div>
+                                        <div class="price-auther-sam">
+                                            <div class="pic-list-price">
+                                                ¥239.00
+                                            </div>
+                                            <div class="evaluate-self">
+                                                月销量 : 1000
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="tab3" class="weui-tab__bd-item">
+                        <ul class="searchlist">
+                            <li class="pic-list">
+                                <a href="" class="card-border">
+                                    <div class="pic-list-div">
+                                        <img width="100%" src="https://m.360buyimg.com/mobilecms/s357x458_jfs/t2674/82/4165920443/506397/10fc37da/57ad8369N3a39b1d7.jpg!cc_357x458!q50.jpg">
+                                    </div>
+                                    <div class="product-content-box">
+                                        <div class="pic-list-name">
+                                            <span>杉杉男款长袖男士纯白衬衫杉杉男款长袖男士纯白衬衫杉杉男款长袖男士纯白衬衫</span>
+                                        </div>
+                                        <div class="price-auther-sam">
+                                            <div class="pic-list-price">
+                                                ¥239.00
+                                            </div>
+                                            <div class="evaluate-self">
+                                                月销量 : 1000
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="pic-list">
+                                <a href="" class="card-border">
+                                    <div class="pic-list-div">
+                                        <img width="100%" src="https://m.360buyimg.com/mobilecms/s357x458_jfs/t2674/82/4165920443/506397/10fc37da/57ad8369N3a39b1d7.jpg!cc_357x458!q50.jpg">
+                                    </div>
+                                    <div class="product-content-box">
+                                        <div class="pic-list-name">
+                                            <span>杉杉男款长袖男士纯白衬衫杉杉男款长袖男士纯白衬衫杉杉男款长袖男士纯白衬衫</span>
+                                        </div>
+                                        <div class="price-auther-sam">
+                                            <div class="pic-list-price">
+                                                ¥239.00
+                                            </div>
+                                            <div class="evaluate-self">
+                                                月销量 : 1000
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="pic-list">
+                                <a href="" class="card-border">
+                                    <div class="pic-list-div">
+                                        <img width="100%" src="https://m.360buyimg.com/mobilecms/s357x458_jfs/t2674/82/4165920443/506397/10fc37da/57ad8369N3a39b1d7.jpg!cc_357x458!q50.jpg">
+                                    </div>
+                                    <div class="product-content-box">
+                                        <div class="pic-list-name">
+                                            <span>杉杉男款长袖男士纯白衬衫杉杉男款长袖男士纯白衬衫杉杉男款长袖男士纯白衬衫</span>
+                                        </div>
+                                        <div class="price-auther-sam">
+                                            <div class="pic-list-price">
+                                                ¥239.00
+                                            </div>
+                                            <div class="evaluate-self">
+                                                月销量 : 1000
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="pic-list">
+                                <a href="" class="card-border">
+                                    <div class="pic-list-div">
+                                        <img width="100%" src="https://m.360buyimg.com/mobilecms/s357x458_jfs/t2674/82/4165920443/506397/10fc37da/57ad8369N3a39b1d7.jpg!cc_357x458!q50.jpg">
+                                    </div>
+                                    <div class="product-content-box">
+                                        <div class="pic-list-name">
+                                            <span>杉杉男款长袖男士纯白衬衫杉杉男款长袖男士纯白衬衫杉杉男款长袖男士纯白衬衫</span>
+                                        </div>
+                                        <div class="price-auther-sam">
+                                            <div class="pic-list-price">
+                                                ¥239.00
+                                            </div>
+                                            <div class="evaluate-self">
+                                                月销量 : 1000
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="tab4" class="weui-tab__bd-item">
+                        <ul class="searchlist">
+                            <li class="pic-list">
+                                <a href="" class="card-border">
+                                    <div class="pic-list-div">
+                                        <img width="100%" src="https://m.360buyimg.com/mobilecms/s357x458_jfs/t2674/82/4165920443/506397/10fc37da/57ad8369N3a39b1d7.jpg!cc_357x458!q50.jpg">
+                                    </div>
+                                    <div class="product-content-box">
+                                        <div class="pic-list-name">
+                                            <span>杉杉男款长袖男士纯白衬衫杉杉男款长袖男士纯白衬衫杉杉男款长袖男士纯白衬衫</span>
+                                        </div>
+                                        <div class="price-auther-sam">
+                                            <div class="pic-list-price">
+                                                ¥239.00
+                                            </div>
+                                            <div class="evaluate-self">
+                                                月销量 : 1000
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="pic-list">
+                                <a href="" class="card-border">
+                                    <div class="pic-list-div">
+                                        <img width="100%" src="https://m.360buyimg.com/mobilecms/s357x458_jfs/t2674/82/4165920443/506397/10fc37da/57ad8369N3a39b1d7.jpg!cc_357x458!q50.jpg">
+                                    </div>
+                                    <div class="product-content-box">
+                                        <div class="pic-list-name">
+                                            <span>杉杉男款长袖男士纯白衬衫杉杉男款长袖男士纯白衬衫杉杉男款长袖男士纯白衬衫</span>
+                                        </div>
+                                        <div class="price-auther-sam">
+                                            <div class="pic-list-price">
+                                                ¥239.00
+                                            </div>
+                                            <div class="evaluate-self">
+                                                月销量 : 1000
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="pic-list">
+                                <a href="" class="card-border">
+                                    <div class="pic-list-div">
+                                        <img width="100%" src="https://m.360buyimg.com/mobilecms/s357x458_jfs/t2674/82/4165920443/506397/10fc37da/57ad8369N3a39b1d7.jpg!cc_357x458!q50.jpg">
+                                    </div>
+                                    <div class="product-content-box">
+                                        <div class="pic-list-name">
+                                            <span>杉杉男款长袖男士纯白衬衫杉杉男款长袖男士纯白衬衫杉杉男款长袖男士纯白衬衫</span>
+                                        </div>
+                                        <div class="price-auther-sam">
+                                            <div class="pic-list-price">
+                                                ¥239.00
+                                            </div>
+                                            <div class="evaluate-self">
+                                                月销量 : 1000
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="pic-list">
+                                <a href="" class="card-border">
+                                    <div class="pic-list-div">
+                                        <img width="100%" src="https://m.360buyimg.com/mobilecms/s357x458_jfs/t2674/82/4165920443/506397/10fc37da/57ad8369N3a39b1d7.jpg!cc_357x458!q50.jpg">
+                                    </div>
+                                    <div class="product-content-box">
+                                        <div class="pic-list-name">
+                                            <span>杉杉男款长袖男士纯白衬衫杉杉男款长袖男士纯白衬衫杉杉男款长袖男士纯白衬衫</span>
+                                        </div>
+                                        <div class="price-auther-sam">
+                                            <div class="pic-list-price">
+                                                ¥239.00
+                                            </div>
+                                            <div class="evaluate-self">
+                                                月销量 : 1000
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 弹窗筛选内容 -->
+        <section class="m-popCover displayNone">
+            <div class="sidebar-content">
+                <div class="sidebar-header">
+                    <div class="weui-flex sidebar-unit">
+                        <div class="weui-flex__item unit-width m-mr10">
+                            <span class="cell-ping">
+                                <i></i>
+                                <span>自营</span>
+                            </span>
+                        </div>
+                        <div class="weui-flex__item unit-width">
+                            <!-- 选中span 的 class为 sel i的class是 weui-icon-success-no-circle -->
+                            <span class="cell-ping sel">
+                                <i class="weui-icon-success-no-circle"></i>
+                                <span>促销</span>
+                            </span>
+                        </div>
+                    </div>
+                    <!-- 价格区间 -->
+                    <div class="sidebar-pricearea bdb1px">
+                        <div class="title-cell">
+                            <div class="title-cell__bd">
+                                <p>价格区间</p>
+                            </div>
+                        </div>
+                        <div class="price-cell">
+                            <input class="range-slider" type="hidden" value="0,10000" style="display: none;">
+                            <div class="price-selected">
+                                <input type="number" class="min-price" value="" placeholder="最低价">
+                                <span class="divider"></span>
+                                <input type="number" class="max-price" value="" placeholder="最高价">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-letter"></div>
+                <div class="sidebar-items-container">
+                    <ul class="sidebar-list">
+                        <li class="sidebar-item">
+                            <div class="title-cell">
+                                <div class="title-cell__bd">
+                                    <p>站点</p>
+                                </div>
+                            </div>
+                            <ul class="sidebar-unit--list">
+                                <li class="unit-width--list">
+                                    <!-- 选中span 的 class为 sel i的class是 weui-icon-success-no-circle -->
+                                    <span class="unit-cell selected">
+                                        <!--<i></i>-->
+                                        <i class="weui-icon-success-no-circle"></i>
+                                        <span>梦芭莎美国馆</span>
+                                    </span>
+                                </li>
+                                <li class="unit-width--list">
+                                    <span class="unit-cell">
+                                        <i></i>
+                                        <span>高端商务男装</span>
+                                    </span>
+                                </li>
+                                <li class="unit-width--list">
+                                    <span class="unit-cell">
+                                        <i></i>
+                                        <span>高端商务男装</span>
+                                    </span>
+                                </li>
+                                <li class="unit-width--list">
+                                    <span class="unit-cell">
+                                        <i></i>
+                                        <span>高端商务男装</span>
+                                    </span>
+                                </li>
+                                <li class="unit-width--list">
+                                    <span class="unit-cell">
+                                        <i></i>
+                                        <span>高端商务男装</span>
+                                    </span>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item">
+                            <div class="title-cell">
+                                <div class="title-cell__bd">
+                                    <p>分类</p>
+                                </div>
+                                <!-- 控制箭头方向 向上多个title-cell__ft-arrow-up-->
+                                <!--<div class="title-cell__ft title-cell__ft-arrow-up"></div>-->
+                                <div class="title-cell__ft displayNone"></div>
+                            </div>
+                            <ul class="sidebar-unit--list">
+                                <li class="unit-width--list">
+                                    <!-- 选中span 的 class为 sel i的class是 weui-icon-success-no-circle -->
+                                    <span class="unit-cell selected">
+                                        <!--<i></i>-->
+                                        <i class="weui-icon-success-no-circle"></i>
+                                        <span>女装</span>
+                                    </span>
+                                </li>
+                                <li class="unit-width--list">
+                                    <span class="unit-cell">
+                                        <i></i>
+                                        <span>男装</span>
+                                    </span>
+                                </li>
+                                <li class="unit-width--list">
+                                    <span class="unit-cell">
+                                        <i></i>
+                                        <span>家居品类</span>
+                                    </span>
+                                </li>
+                                <li class="unit-width--list">
+                                    <span class="unit-cell">
+                                        <i></i>
+                                        <span>童装</span>
+                                    </span>
+                                </li>
+                                <li class="unit-width--list">
+                                    <span class="unit-cell">
+                                        <i></i>
+                                        <span>包包</span>
+                                    </span>
+                                </li>
+                                <li class="unit-width--list">
+                                    <span class="unit-cell">
+                                        <i></i>
+                                        <span>化妆品</span>
+                                    </span>
+                                </li>
+                                <li class="unit-width--list">
+                                    <span class="unit-cell">
+                                        <i></i>
+                                        <span>家居品类</span>
+                                    </span>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- 尺寸 注意！！！ 这里有如果多余60个则显示二级分类代码，-->
+                        <li class="sidebar-item">
+                            <div class="title-cell">
+                                <div class="title-cell__bd">
+                                    <p>尺寸</p>
+                                </div>
+                                <!-- 控制箭头方向 向上多个title-cell__ft-arrow-up-->
+                                <!--<div class="title-cell__ft title-cell__ft-arrow-up"></div>-->
+                                <div class="title-cell__ft displayNone"></div>
+                            </div>
+                            <ul class="sidebar-unit--list">
+                                <li class="unit-width--list">
+                                    <!-- 选中span 的 class为 sel i的class是 weui-icon-success-no-circle -->
+                                    <span class="unit-cell selected">
+                                        <i></i>
+                                        <span>M</span>
+                                    </span>
+                                </li>
+                                <li class="unit-width--list">
+                                    <span class="unit-cell">
+                                        <i></i>
+                                        <span>L</span>
+                                    </span>
+                                </li>
+                                <li class="unit-width--list">
+                                    <span class="unit-cell">
+                                        <i></i>
+                                        <span>S</span>
+                                    </span>
+                                </li>
+                                <li class="unit-width--list">
+                                    <span class="unit-cell">
+                                        <i></i>
+                                        <span>XL</span>
+                                    </span>
+                                </li>
+                                <li class="unit-width--list">
+                                    <span class="unit-cell">
+                                        <i></i>
+                                        <span>XS</span>
+                                    </span>
+                                </li>
+                                <li class="unit-width--list">
+                                    <span class="unit-cell">
+                                        <i></i>
+                                        <span>XXL</span>
+                                    </span>
+                                </li>
+                                <li class="unit-width--list">
+                                    <span class="unit-cell">
+                                        <i></i>
+                                        <span>XXXL</span>
+                                    </span>
+                                </li>
+                                <!-- 如果多余60个则显示二级分类-->
+                                <div class="unit-width--listAllBtn displayNone">全部分类</div>
+                            </ul>
+                        </li>
+                        <!-- 风格 -->
+                        <li class="sidebar-item">
+                            <div class="title-cell">
+                                <div class="title-cell__bd">
+                                    <p>风格</p>
+                                </div>
+                                <!-- 控制箭头方向 向上多个title-cell__ft-arrow-up-->
+                                <!--<div class="title-cell__ft title-cell__ft-arrow-up"></div>-->
+                                <div class="title-cell__ft displayNone"></div>
+                            </div>
+                            <ul class="sidebar-unit--list">
+                                <li class="unit-width--list">
+                                    <!-- 选中span 的 class为 sel i的class是 weui-icon-success-no-circle -->
+                                    <span class="unit-cell selected">
+                                        <i></i>
+                                        <span>欧美风范</span>
+                                    </span>
+                                </li>
+                                <li class="unit-width--list">
+                                    <span class="unit-cell">
+                                        <i></i>
+                                        <span>时尚休闲</span>
+                                    </span>
+                                </li>
+                                <li class="unit-width--list">
+                                    <span class="unit-cell">
+                                        <i></i>
+                                        <span>日韩潮流</span>
+                                    </span>
+                                </li>
+                                <li class="unit-width--list">
+                                    <span class="unit-cell">
+                                        <i></i>
+                                        <span>商务正装</span>
+                                    </span>
+                                </li>
+                                <li class="unit-width--list">
+                                    <span class="unit-cell">
+                                        <i></i>
+                                        <span>美式休闲</span>
+                                    </span>
+                                </li>
+                                <li class="unit-width--list">
+                                    <span class="unit-cell">
+                                        <i></i>
+                                        <span>文艺</span>
+                                    </span>
+                                </li>
+                                <li class="unit-width--list">
+                                    <span class="unit-cell">
+                                        <i></i>
+                                        <span>运动街头</span>
+                                    </span>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 重置确认按钮 -->
+            <div class="sidebar-dealBtns bdt1px">
+                <div class="btn-reset">重置</div>
+                <div class="btn-confirm">确定</div>
+            </div>
+            <!-- 二级分类尺寸等 点击全部分类添加 class:sidebar-second--animated -->
+            <div class="sidebar-second">
+                <div class="second-hd bdb1px">
+                    <div class="btn-back">
+                        返回
+                    </div>
+                    <div class="second-tt">
+                        尺寸
+                    </div>
+                    <div class="btn-submit">
+                        确定
+                    </div>
+                </div>
+                <ul class="second-lists">
+                    <li class="second-list__item bdb1px checked">
+                        <span class="item-tt">全部</span>
+                        <i></i>
+                    </li>
+                    <li class="second-list__item bdb1px">
+                        <span class="item-tt">M</span>
+                        <i></i>
+                    </li>
+                    <li class="second-list__item bdb1px">
+                        <span class="item-tt">L</span>
+                        <i></i>
+                    </li>
+                    <li class="second-list__item bdb1px">
+                        <span class="item-tt">M</span>
+                        <i></i>
+                    </li>
+                    <li class="second-list__item bdb1px">
+                        <span class="item-tt">L</span>
+                        <i></i>
+                    </li>
+                    <li class="second-list__item bdb1px">
+                        <span class="item-tt">M</span>
+                        <i></i>
+                    </li>
+                    <li class="second-list__item bdb1px">
+                        <span class="item-tt">L</span>
+                        <i></i>
+                    </li>
+                    <li class="second-list__item bdb1px">
+                        <span class="item-tt">M</span>
+                        <i></i>
+                    </li>
+                    <li class="second-list__item bdb1px">
+                        <span class="item-tt">L</span>
+                        <i></i>
+                    </li>
+                    <li class="second-list__item bdb1px">
+                        <span class="item-tt">M</span>
+                        <i></i>
+                    </li>
+                    <li class="second-list__item bdb1px">
+                        <span class="item-tt">L</span>
+                        <i></i>
+                    </li>
+                    <li class="second-list__item bdb1px">
+                        <span class="item-tt">M</span>
+                        <i></i>
+                    </li>
+                    <li class="second-list__item bdb1px">
+                        <span class="item-tt">L</span>
+                        <i></i>
+                    </li>
+                    <li class="second-list__item bdb1px">
+                        <span class="item-tt">M</span>
+                        <i></i>
+                    </li>
+                    <li class="second-list__item bdb1px">
+                        <span class="item-tt">L</span>
+                        <i></i>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <!--S 没有找到结果显示这里代码 -->
+    <div class="wy-search__error displayNone">
+        <img class="error-bg" src="./images/nodata_none.png" alt="">
+        <p class="error-text">没有找到耶~</p>
+    </div>
+    <!--E 没有找到结果 -->
+    <!--S 遮罩层  -->
+    <div class="common-covermask displayNone"></div>
+    <!--E 遮罩层  -->
+    <!--S ajax加载层 显示加class: wy-toast--visible-->
+    <!--<div class="wy-loading_toast ">-->
+    <div class="wy-loading_toast">
+        <div class="wy-toast_pic">
+            <img src="images/loading.gif" alt="">
+        </div>
+        <p class="wy-toast_content">Loading</p>
+    </div>
+    <!--E 加载层 -->
+    <script src="js/jquery-2.1.4.js"></script>
+    <script src="js/jquery-weui.min.js"></script>
+    <script src="js/fastclick.js"></script>
+    <script src="js/jquery.range-min.js"></script>
+    <script>
+        $(function () {
+            FastClick.attach(document.body);
+
+            // 搜索操作
+            (function () {
+                // 搜索框获取焦点显示搜索内容
+                var $searchFormInput = $('#J-search_form--input');
+                var $searchBtnNavbar = $('#J-search_btn--navbar');
+                var $searchBtn = $('#J-search_btn');
+                var $searchWrapper = $('#J-search_wrapper');
+                var $commonDownselNav = $('.common-downsel__nav');
+                var $commonCovermask = $('.common-covermask');
+                // 获取焦点时给body,html添加个class，到时点击热门搜索时需要删除这个class
+                $searchFormInput.on('focus', function () {
+                    $('html,body').addClass('bodyHtmlH');
+                    $searchWrapper.removeClass('displayNone');
+                    $searchBtnNavbar.addClass('displayNone');
+                    $searchBtn.removeClass('displayNone');
+                });
+                // 点击搜索操作
+                $searchBtn.on('click', function () {
+                    $searchWrapper.addClass('displayNone');
+                    $(this).addClass('displayNone');
+                    $searchBtnNavbar.removeClass('displayNone');
+                });
+                // 点击右手边的导航菜单
+                $searchBtnNavbar.on('click', function () {
+                    $commonDownselNav.removeClass('displayNone');
+                    $commonCovermask.removeClass('displayNone');
+                });
+                // 点击遮罩层隐藏导航菜单
+                $commonCovermask.on('click', function () {
+                    $commonDownselNav.addClass('displayNone');
+                    $commonCovermask.addClass('displayNone');
+                });
+            })();
+
+            // tab切换操作
+            (function () {
+                var $searchListcon = $('.m-search_listcon');
+                var $searchListconItem = $searchListcon.find('.new-change-eleven');
+                var $newSortPrice = $searchListcon.find('.new-sort-price');
+                var $span = $newSortPrice.find('span');
+                // 前面三个tab，阻止url上面带有hash标志
+                $searchListconItem.each(function () {
+                    // 移除排序价格的class
+                    $(this).on('click', function () {
+                        $span.attr('class', '');
+                    });
+                });
+                // 排序价格
+                $newSortPrice.on('click', function () {
+                    if ($span.hasClass('arrow-down')) {
+                        $span.addClass('arrow-up').removeClass('arrow-down');
+                    } else {
+                        $span.addClass('arrow-down').removeClass('arrow-up');
+                    }
+                });
+
+            })();
+
+            // 弹窗内容操作
+            (function () {
+                // 点击箭头展开收缩
+                var $popCover = $('.m-popCover');
+                var $sidebarContent = $popCover.find('.sidebar-content');
+                var $sidebarList = $popCover.find('.sidebar-list');
+                var $slidebarItem = $sidebarList.find('.sidebar-item');
+
+                var $sidebarSecond = $popCover.find('.sidebar-second');
+                var $secondListsLi = $sidebarSecond.find('.second-lists .second-list__item');
+                var $btnBack = $sidebarSecond.find('.btn-back');
+                var $btnSubmit = $sidebarSecond.find('.btn-submit');
+
+                var $commonCovermask = $('.common-covermask');
+
+                // 筛选按钮
+                var $searchSort = $('#searchSort');
+
+                // 如果多余6个则控制展开
+                $slidebarItem.each(function () {
+                    var $unitWidth = $(this).find('li:gt(5)');
+                    var $unitWidthlistAllBtn = $(this).find('.unit-width--listAllBtn');
+                    var $titleCellFt = $(this).find('.title-cell__ft');
+                    // 如果大于 60个则显示全部分类按钮
+                    if ($(this).find('li').length > 6) {
+                        $unitWidthlistAllBtn.eq(0).removeClass('displayNone');
+                        // 展示二级分类相关操作
+                        $unitWidthlistAllBtn.on('click', function () {
+                            $sidebarSecond.addClass('sidebar-second--animated');
+                        });
+                    }
+
+                    if ($unitWidth) {
+                        $titleCellFt.removeClass('displayNone');
+                        $unitWidth.hide();
+                    }
+
+                    if ($titleCellFt) {
+                        $titleCellFt.on('click', function () {
+                            if ($unitWidth.is(':visible')) {
+                                $unitWidth.slideUp('fast');
+                                $(this).removeClass('title-cell__ft-arrow-up');
+                            } else {
+                                $unitWidth.slideDown('fast').show();
+                                $(this).addClass('title-cell__ft-arrow-up');
+                            }
+                        });
+                    }
+                });
+
+                // 二级分类操作
+                $btnBack.on('click', function () {
+                    $sidebarSecond.removeClass('sidebar-second--animated');
+                });
+                $secondListsLi.each(function () {
+                    $(this).on('click', function () {
+                        $(this).addClass('checked').siblings().removeClass('checked');
+                    });
+                });
+
+                // 筛选操作
+                $searchSort.on('click', function () {
+                    $('html,body').addClass('bodyHtmlH');
+                    $popCover.removeClass('displayNone');
+                    $commonCovermask.removeClass('displayNone');
+                    $sidebarContent.addClass('sidebar-content--animated');
+                    //  价格区间
+                    $('.range-slider').jRange({
+                        from: 0,
+                        to: 10000,
+                        step: 1,
+                        scale: [0, 100, 200, 300, 500, 1000, 2000, 10000],
+                        format: '%s',
+                        width: '95%',
+                        showLabels: false,
+                        showScale: true,
+                        isRange: true,
+                        onstatechange: function () {
+                            // 获取的值是如下： value="12,75"
+                            var $val = $(".range-slider").val().split(',');
+                            $('.min-price').val($val[0]);
+                            $('.max-price').val($val[1]);
+                        }
+                    });
+                });
+                // 遮罩层操作
+                $commonCovermask.on('click', function () {
+                    $('html,body').removeClass('bodyHtmlH');
+                    $commonCovermask.addClass('displayNone');
+                    $popCover.addClass('displayNone');
+                    $sidebarSecond.removeClass('sidebar-second--animated');
+                });
+            })();
+
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>卡券礼券</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/weui.min.css">
+    <link rel="stylesheet" href="css/jquery-weui.min.css">
+    <link rel="stylesheet" href="css/mystyle.css">
+</head>
+
+<body class="cr_page_grey">
+    <!--顶部标题栏start-->
+    <div class="cr_header_bar">
+        <div class="cr_header_bar_wrap">
+            <div class="cr-header-icon-back"><i></i></div>
+            <div class="cr_header_title">
+                卡券礼券
+            </div>
+            <div class="cr_header_menu">
+                <i class="cr_header_active_gift"></i>
+                <p>激活卡券</p>
+            </div>
+        </div>
+    </div>
+    <!--顶部标题栏end-->
+    <div class="find_nav">
+        <div class="find_nav_left">
+            <div class="find_nav_list gift_nav_list">
+                <ul>
+                    <li class="find_nav_cur" data-page="0">
+                        <a href="javascript:void(0)">可使用礼券(10)</a>
+                    </li>
+                    <li data-page="1">
+                        <a href="javascript:void(0)">不适用礼券(6)</a>
+                    </li>
+                    <li class="sideline"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="merge-panel gift_list" id="availablePage">
+        <div class="cr_tips_wrap hidden">
+            <!--无可使用礼券时,去掉hidden-->
+            <div class="cr_icon_fail"></div>
+            <p class="cr_ok_tips">暂无可使用的礼券</p>
+        </div>
+        <div class="weui-cells weui-cells_checkbox">
+            <div class="cr_main_item gift_item">
+                <label class="weui-cell weui-check__label cr_product_label" for="s01">
+                <div class="weui-cell__hd">
+                    <input type="checkbox" class="weui-check" checked="checked" name="s01" id="s01">
+                    <i class="weui-icon-checked"></i>
+                </div>
+            </label>
+                <div class="weui-cell__bd gift_item_info_wrap">
+                    <div class="gift_item_price">
+                        <p class="grey_font"><span class="cr_red_font">￥</span><span class="cr_red_font lg_font price_span">51.40</span>礼券</p>
+                        <p>无最低消费限制</p>
+                    </div>
+                    <div class="gift_item_info">
+                        <span class="grey_font">使用范围：</span>
+                        <p class="info_p">限梦芭莎自主全品牌使用</p>
+                    </div>
+                    <p class="gift_item_info">
+                        <span class="grey_font">有效期至：</span> 2010.06.08
+                    </p>
+                    <p class="gift_item_info">
+                        <span class="grey_font">备注：</span> 2017节日红包
+                    </p>
+                    <p class="gift_item_info">
+                        <label class="grey_font">使用额度：<input type="text" placeholder="请输入使用金额"><span>元</span></label>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="weui-cells weui-cells_checkbox">
+            <div class="cr_main_item gift_item">
+                <label class="weui-cell weui-check__label cr_product_label" for="s02">
+                <div class="weui-cell__hd">
+                    <input type="checkbox" class="weui-check" name="s01" id="s02">
+                    <i class="weui-icon-checked"></i>
+                </div>
+            </label>
+                <div class="weui-cell__bd gift_item_info_wrap">
+                    <div class="gift_item_price">
+                        <p class="grey_font"><span class="cr_red_font">￥</span><span class="cr_red_font lg_font price_span">51.40</span>优惠卡</p>
+                        <p>满200可用</p>
+                    </div>
+                    <div class="gift_item_info">
+                        <span class="grey_font">使用范围：</span>
+                        <p class="info_p">限梦芭莎自主全品牌使用</p>
+                    </div>
+                    <p class="gift_item_info">
+                        <span class="grey_font">有效期至：</span> 2010.06.08
+                    </p>
+                    <p class="gift_item_info">
+                        <span class="grey_font">备注：</span> 会员专享
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="weui-cells weui-cells_checkbox">
+            <div class="cr_main_item gift_item">
+                <label class="weui-cell weui-check__label cr_product_label" for="s03">
+                <div class="weui-cell__hd">
+                    <input type="checkbox" class="weui-check" name="s01" id="s03">
+                    <i class="weui-icon-checked"></i>
+                </div>
+            </label>
+                <div class="weui-cell__bd gift_item_info_wrap">
+                    <div class="gift_item_price">
+                        <p class="grey_font"><span class="cr_red_font lg_font price_span">5</span><span class="cr_red_font">折</span>优惠卡</p>
+                        <p>满100可用</p>
+                    </div>
+                    <div class="gift_item_info">
+                        <span class="grey_font">使用范围：</span>
+                        <p class="info_p">梦芭莎、若缇诗、蒙蒂埃莫、韩伊儿</p>
+                    </div>
+                    <p class="gift_item_info">
+                        <span class="grey_font">有效期至：</span> 2010.06.08
+                    </p>
+                    <p class="gift_item_info">
+                        <span class="grey_font">备注：</span> 会员专享
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="merge-panel gift_list not_available_list jq_hidden" id="notAvailablePage">
+        <div class="weui-cell__bd gift_item_info_wrap">
+            <div class="gift_item_price">
+                <p class="grey_font"><span class="cr_red_font">￥</span><span class="cr_red_font lg_font price_span">51.40</span>礼券</p>
+                <p>无最低消费限制</p>
+            </div>
+            <div class="gift_item_info">
+                <span class="grey_font">使用范围：</span>
+                <p class="info_p">限梦芭莎自主全品牌使用</p>
+            </div>
+            <p class="gift_item_info">
+                <span class="grey_font">有效期至：</span> 2010.06.08
+            </p>
+            <p class="gift_item_info">
+                <span class="grey_font">备注：</span> 2017节日红包
+            </p>
+        </div>
+        <div class="weui-cell__bd gift_item_info_wrap">
+            <div class="gift_item_price">
+                <p class="grey_font"><span class="cr_red_font">￥</span><span class="cr_red_font lg_font price_span">51.40</span>优惠卡</p>
+                <p>满200可用</p>
+            </div>
+            <div class="gift_item_info">
+                <span class="grey_font">使用范围：</span>
+                <p class="info_p">梦芭莎、若缇诗、蒙蒂埃莫、韩伊儿</p>
+            </div>
+            <p class="gift_item_info">
+                <span class="grey_font">有效期至：</span> 2010.06.08
+            </p>
+            <p class="gift_item_info">
+                <span class="grey_font">备注：</span> 2017节日红包
+            </p>
+        </div>
+    </div>
+    <div class="cr_new_address"><a href="javascript:;" class="weui-btn">确定</a></div>
+    <script src="js/jquery-2.1.4.js"></script>
+    <script src="js/jquery-weui.min.js"></script>
+    <script src="js/fastclick.js"></script>
+    <script>
+        $(function() {
+            FastClick.attach(document.body);
+            /**
+             * 顶部横向滚动导航栏
+             */
+            var nav_w = $(".find_nav_list li").first().width();
+            $(".sideline").width(nav_w);
+            navName("0");
+            $(".find_nav_list li").on('click', function() {
+                nav_w = $(this).width();
+                $(".sideline").stop(true);
+                $(".sideline").animate({
+                    left: $(this).position().left
+                }, 300);
+                $(".sideline").animate({
+                    width: nav_w
+                });
+                $(this).addClass("find_nav_cur").siblings().removeClass("find_nav_cur");
+                var fn_w = ($(".find_nav").width() - nav_w) / 2;
+                var fnl_l;
+                var fnl_x = parseInt($(this).position().left);
+                if (fnl_x <= fn_w) {
+                    fnl_l = 0;
+                } else if (fn_w - fnl_x <= flb_w - fl_w) {
+                    fnl_l = flb_w - fl_w;
+                } else {
+                    fnl_l = fn_w - fnl_x;
+                }
+                sessionStorage.left = fnl_l;
+                //            var c_nav=$(this).find("a").text();
+                //            navName(c_nav);
+                var index = $(this).attr("data-page");
+                navName(index);
+            });
+            var fl_w = $(".find_nav_list").width();
+            var flb_w = $(".find_nav_left").width();
+        });
+
+        function navName(c_nav) {
+            switch (c_nav) {
+                case "0":
+                    $("#notAvailablePage").fadeOut();
+                    $("#availablePage").fadeIn();
+                    break;
+                case "1":
+                    $("#availablePage").fadeOut();
+                    $("#notAvailablePage").fadeIn();
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>

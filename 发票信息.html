@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/weui.min.css">
+    <link rel="stylesheet" href="css/jquery-weui.min.css">
+    <link rel="stylesheet" href="css/mystyle.css">
+</head>
+
+<body class="cr_page_grey invoice_page">
+    <!--顶部标题栏start-->
+    <div class="cr_header_bar">
+        <div class="cr_header_bar_wrap">
+            <div class="cr-header-icon-back"><i></i></div>
+            <div class="cr_header_title">
+                发票信息
+            </div>
+            <div class="cr_header_menu icon_warnings_wrap">
+                <i class="icon_warnings icon_warnings--header"></i>
+            </div>
+        </div>
+    </div>
+    <!--顶部标题栏end-->
+    <div class="pay_type invoice_info">
+        <div class="pay_type_item">
+            <h2>请选择发票抬头</h2>
+            <div class="pay_type_btn_group">
+                <label for="pay01" class="weui-icon-checked active">
+                公司
+                <input type="radio" id="pay01" name="pay" checked="checked" value="0">
+            </label>
+                <label for="pay02" class="weui-icon-checked">
+                个人
+                <input type="radio" id="pay02" name="pay" value="1">
+            </label>
+            </div>
+            <div class="weui-cells weui-cells_form">
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label">名称</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="text" placeholder="点击输入抬头名称">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pay_type_item">
+            <h2>发票内容</h2>
+            <div class="weui-cells weui-cells_checkbox">
+                <label class="weui-cell weui-check__label" for="i01">
+            <div class="weui-cell__hd">
+                <input type="radio" class="weui-check" name="invoiceContent" id="i01" checked="checked">
+                <i class="weui-icon-checked"></i>
+            </div>
+            <div class="weui-cell__bd">
+                <p>服饰</p>
+            </div>
+        </label>
+                <label class="weui-cell weui-check__label" for="i02">
+                <div class="weui-cell__hd">
+                    <input type="radio" class="weui-check" name="invoiceContent" id="i02">
+                    <i class="weui-icon-checked"></i>
+                </div>
+                <div class="weui-cell__bd">
+                    <p>化妆品</p>
+                </div>
+            </label>
+                <label class="weui-cell weui-check__label" for="i03">
+                <div class="weui-cell__hd">
+                    <input type="radio" class="weui-check" name="invoiceContent" id="i03">
+                    <i class="weui-icon-checked"></i>
+                </div>
+                <div class="weui-cell__bd">
+                    <p>鞋</p>
+                </div>
+            </label>
+                <label class="weui-cell weui-check__label" for="i04">
+                <div class="weui-cell__hd">
+                    <input type="radio" class="weui-check" name="invoiceContent" id="i04">
+                    <i class="weui-icon-checked"></i>
+                </div>
+                <div class="weui-cell__bd">
+                    <p>家纺</p>
+                </div>
+            </label>
+                <label class="weui-cell weui-check__label" for="i05">
+                <div class="weui-cell__hd">
+                    <input type="radio" class="weui-check" name="invoiceContent" id="i05">
+                    <i class="weui-icon-checked"></i>
+                </div>
+                <div class="weui-cell__bd">
+                    <p>包包</p>
+                </div>
+            </label>
+                <label class="weui-cell weui-check__label" for="i06">
+                <div class="weui-cell__hd">
+                    <input type="radio" class="weui-check" name="invoiceContent" id="i06">
+                    <i class="weui-icon-checked"></i>
+                </div>
+                <div class="weui-cell__bd">
+                    <p>饰品</p>
+                </div>
+            </label>
+            </div>
+        </div>
+    </div>
+    <div class="footer footer_invoice">
+        <div class="no_invoice_btn">不开发票</div>
+        <div class="invoice_btn">确定开发票</div>
+    </div>
+
+    <script src="js/jquery-2.1.4.js"></script>
+    <script src="js/jquery-weui.min.js"></script>
+    <script src="js/fastclick.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+        $(function() {
+            FastClick.attach(document.body);
+            $.modal({
+                title: '温馨提示',
+                text: '<p>1，按广东税务机关要求,发票抬头必须填写公司名、人名，“自用”（字数限制在21字内），不能为空、符号、字母、或者数字，发票抬头若为空，将默认为收货人姓名。</p><p>2，若发生退换货发票必须随退换货商品寄回</p><p>3，发票的开票金额不包括礼品卡、促销活动支付部分</p><p>4，如商品有第三方卖家销售，发票内容由其卖家决定，发票由卖家开具并寄出</p>',
+                buttons: [{
+                    text: "我知道了",
+                    onClick: function() {
+                        console.log(1)
+                    }
+                }]
+            });
+            $(".icon_warnings_wrap").on("click", function() {
+                $.modal({
+                    title: '温馨提示',
+                    text: '<p>1，按广东税务机关要求,发票抬头必须填写公司名、人名，“自用”（字数限制在21字内），不能为空、符号、字母、或者数字，发票抬头若为空，将默认为收货人姓名。</p><p>2，若发生退换货发票必须随退换货商品寄回</p><p>3，发票的开票金额不包括礼品卡、促销活动支付部分</p><p>4，如商品有第三方卖家销售，发票内容由其卖家决定，发票由卖家开具并寄出</p>',
+                    buttons: [{
+                        text: "我知道了",
+                        onClick: function() {
+                            console.log(1)
+                        }
+                    }]
+                });
+            })
+            $(".pay_type_btn_group input[type='radio']").each(function() {
+                $(this).change(function() {
+                    if ($(this).prop("checked") == true) {
+                        $(this).parent().siblings(".weui-icon-checked").removeClass("active");
+                        $(this).parent().addClass("active");
+                    }
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/weui.min.css">
+    <link rel="stylesheet" href="css/jquery-weui.min.css">
+    <link rel="stylesheet" href="css/mystyle.css">
+</head>
+
+<body class="cr_page_grey">
+    <!--顶部标题栏start-->
+    <div class="cr_header_bar">
+        <div class="cr_header_bar_wrap">
+            <div class="cr-header-icon-back"><i></i></div>
+            <div class="cr_header_title">
+                选择支付方式
+            </div>
+            <div class="cr_header_menu">
+                <a href="javascript:;" class="search_btn--navbar" id="J-search_btn--navbar"></a>
+            </div>
+        </div>
+    </div>
+    <!--顶部标题栏end-->
+    <!-- 遮罩层  -->
+    <div class="common-covermask jq_hidden"></div>
+    <!-- 右上角的导航菜单 -->
+    <div class="common-downsel__nav jq_hidden">
+        <ul>
+            <li>
+                <a href="">
+                    <i class="home-icon"></i> 首页
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="s-icon"></i>搜索</a>
+            </li>
+            <li>
+                <a href=""><i class="shopping-icon"></i>购物车</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="my-icon"></i>我的</a>
+            </li>
+        </ul>
+    </div>
+    <div class="pay_type">
+        <div class="pay_type_item">
+            <h2>支付方式</h2>
+            <div class="pay_type_btn_group">
+                <label for="pay01" class="weui-icon-checked active">
+                在线支付
+                <input type="radio" id="pay01" name="pay" checked="checked" value="0">
+            </label>
+                <label for="pay02" class="weui-icon-checked"><!--不支持货到付款方式时，添加 "invisible" class-->
+                货到付款
+                <input type="radio" id="pay02" name="pay" value="1">
+            </label>
+            </div>
+            <p class="pay_online">即时到账，支持绝大部分银行借记卡或部分银行信用卡</p>
+            <p class="pay_cash hidden">送货上门后再付款</p>
+            <p class="pay_no_cash hidden"><i class="icon_warnings"></i>该商品暂不支持货到付款呦</p>
+            <!--不支持货到付款方式时，去掉 "hidden" class-->
+        </div>
+        <div class="pay_type_item">
+            <h2>配送方式</h2>
+            <div class="pay_type_btn_group" id="dispatch">
+                <label for="dispatch01" class="weui-icon-checked active">
+                快递送货上门
+                <input type="radio" id="dispatch01" name="dispatch" checked="checked" value="0">
+            </label>
+                <label for="dispatch02" class="weui-icon-checked">
+                门店自提
+                <input type="radio" id="dispatch02" name="dispatch" value="1">
+            </label>
+            </div>
+            <div class="pay_type_btn_group hidden" id="payType">
+                <label for="paytype01" class="weui-icon-checked active">
+                现金支付
+                <input type="radio" id="paytype01" name="dispatch" checked="checked" value="0">
+            </label>
+                <label for="paytype02" class="weui-icon-checked"><!--不支持POS刷卡方式时，添加 "invisible" class-->
+                POS刷卡
+                <input type="radio" id="paytype02" name="dispatch" value="1">
+            </label>
+            </div>
+            <p class="pay_no_pos hidden"><i class="icon_warnings"></i>该商品暂不支持POS机刷卡呦</p>
+            <!--不支持POS刷卡时，去掉 "hidden" class-->
+            <div class="weui-cell shop_address_wrap">
+                <div class="shop_address">
+                    <p class="shop_name">梦芭莎南京西路旗舰店</p>
+                    <p>详细地址：上海南京西路818号</p>
+                    <p>电话：021-52830586</p>
+                </div>
+                <div class="shop_map_link">
+                    <i class="icon_shop_address"></i>
+                </div>
+            </div>
+        </div>
+        <div class="pay_type_confirm">
+            <div>确定</div>
+        </div>
+    </div>
+
+    <script src="js/jquery-2.1.4.js"></script>
+    <script src="js/jquery-weui.min.js"></script>
+    <script src="js/fastclick.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+        $(function() {
+            FastClick.attach(document.body);
+            var $searchBtnNavbar = $('#J-search_btn--navbar');
+            var $commonDownselNav = $('.common-downsel__nav');
+            var $commonCovermask = $('.common-covermask');
+            // 点击右手边的导航菜单
+            $searchBtnNavbar.on('click', function() {
+                $commonDownselNav.removeClass('jq_hidden');
+                $commonCovermask.removeClass('jq_hidden');
+            });
+            // 点击遮罩层隐藏导航菜单
+            $commonCovermask.on('click', function() {
+                $commonDownselNav.addClass('jq_hidden');
+                $commonCovermask.addClass('jq_hidden');
+            });
+        });
+        $(".pay_type_btn_group input[type='radio']").each(function() {
+            $(this).change(function() {
+                if ($(this).prop("checked") == true) {
+                    $(this).parent().siblings(".weui-icon-checked").removeClass("active");
+                    $(this).parent().addClass("active");
+                    if ($(this).attr("name") == "pay") {
+                        if ($(this).val() == 0) { //在线支付
+                            $(".pay_cash").addClass("hidden");
+                            $(".pay_online").removeClass("hidden");
+                            $("#dispatch").removeClass("hidden");
+                            $("#payType").addClass("hidden");
+                        } else {
+                            $(".pay_online").addClass("hidden");
+                            $(".pay_cash").removeClass("hidden");
+                            $("#payType").removeClass("hidden");
+                            $("#dispatch").addClass("hidden");
+                        }
+                    }
+
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

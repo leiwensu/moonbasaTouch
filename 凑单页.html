@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>凑单免运费页</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/weui.min.css">
+    <link rel="stylesheet" href="css/jquery-weui.min.css">
+    <link rel="stylesheet" href="css/mystyle.css">
+</head>
+
+<body class="cr_page_grey">
+    <!--顶部标题栏start-->
+    <div class="cr_header_bar">
+        <div class="cr_header_bar_wrap">
+            <div class="cr-header-icon-back"><i></i></div>
+            <div class="cr_header_title">
+                凑满180元免邮
+            </div>
+            <div class="cr_header_menu"></div>
+        </div>
+    </div>
+    <!--顶部标题栏end-->
+    <div class="find_nav">
+        <div class="find_nav_left">
+            <div class="find_nav_list">
+                <ul>
+                    <li class="find_nav_cur"><a href="javascript:void(0)">20元以下</a></li>
+                    <li><a href="javascript:void(0)">20元-50元</a></li>
+                    <li><a href="javascript:void(0)">50元-80元</a></li>
+                    <li><a href="javascript:void(0)">80元-120元</a></li>
+                    <li><a href="javascript:void(0)">20元以下</a></li>
+                    <li><a href="javascript:void(0)">20元-50元</a></li>
+                    <li><a href="javascript:void(0)">80元-120元</a></li>
+                    <li class="sideline"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="weui-panel weui-panel_access merge-panel">
+        <div class="weui-panel__bd" id="page01">
+            <div class="weui-media-box weui-media-box_appmsg">
+                <a href="javascript:void(0);" class="weui-media-box__hd merge-panel_imgwrap">
+                    <img class="weui-media-box__thumb" src="http://usr.im/90x120">
+                </a>
+                <a class="weui-media-box__bd merge-panel_conwrap">
+                    <h4 class="weui-media-box__title">标题一</h4>
+                    <div class="merge-panel_pricewrap">
+                        <p><span class="cr_red_font">￥163.00</span></p>
+                        <p class="merge-panel_icon"><i class="icon_cart icon_cart--red"></i></p>
+                    </div>
+                </a>
+            </div>
+            <div class="weui-media-box weui-media-box_appmsg">
+                <a href="javascript:void(0);" class="weui-media-box__hd merge-panel_imgwrap">
+                    <img class="weui-media-box__thumb" src="http://usr.im/90x120">
+                </a>
+                <a class="weui-media-box__bd merge-panel_conwrap">
+                    <h4 class="weui-media-box__title">标题二</h4>
+                    <div class="merge-panel_pricewrap">
+                        <p><span class="cr_red_font">￥163.00</span></p>
+                        <p class="merge-panel_icon"><i class="icon_cart icon_cart--red"></i></p>
+                    </div>
+                </a>
+            </div>
+            <div class="weui-media-box weui-media-box_appmsg">
+                <a href="javascript:void(0);" class="weui-media-box__hd merge-panel_imgwrap">
+                    <img class="weui-media-box__thumb" src="http://usr.im/90x120">
+                </a>
+                <a class="weui-media-box__bd merge-panel_conwrap">
+                    <h4 class="weui-media-box__title">标题二</h4>
+                    <div class="merge-panel_pricewrap">
+                        <p><span class="cr_red_font">￥163.00</span></p>
+                        <p class="merge-panel_icon"><i class="icon_cart icon_cart--red"></i></p>
+                    </div>
+                </a>
+            </div>
+            <div class="weui-media-box weui-media-box_appmsg">
+                <a href="javascript:void(0);" class="weui-media-box__hd merge-panel_imgwrap">
+                    <img class="weui-media-box__thumb" src="http://usr.im/90x120">
+                </a>
+                <a class="weui-media-box__bd merge-panel_conwrap">
+                    <h4 class="weui-media-box__title">标题二</h4>
+                    <div class="merge-panel_pricewrap">
+                        <p><span class="cr_red_font">￥163.00</span></p>
+                        <p class="merge-panel_icon"><i class="icon_cart icon_cart--red"></i></p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div id="page02">
+            page02
+        </div>
+        <div id="page03">
+            page03
+        </div>
+        <div id="page04">
+            page04
+        </div>
+        <div class="footer-wrap">
+            <div class="footer-mask">
+                <p class="mask-item">小计: <span>￥75.00</span></p>
+                <p>再买: <span>￥75.00</span>即可享免运费服务</p>
+            </div>
+            <div class="footer-shop-btn">
+                <a href="javascript:;">去购物车</a>
+            </div>
+        </div>
+
+    </div>
+    <script src="js/jquery-2.1.4.js"></script>
+    <script src="js/jquery-weui.min.js"></script>
+    <script src="js/fastclick.js"></script>
+    <script>
+        /**
+         * 顶部横向滚动导航栏
+         */
+        $(function() {
+            FastClick.attach(document.body);
+            $(".find_nav_list").css("left", sessionStorage.left + "px");
+            $(".find_nav_list li").each(function() {
+                if ($(this).find("a").text() == sessionStorage.pagecount) {
+                    $(".sideline").css({
+                        left: $(this).position().left
+                    });
+                    $(".sideline").css({
+                        width: $(this).outerWidth()
+                    });
+                    $(this).addClass("find_nav_cur").siblings().removeClass("find_nav_cur");
+                    navName(sessionStorage.pagecount);
+                    return false
+                } else {
+                    $(".sideline").css({
+                        left: 0
+                    });
+                    $(".find_nav_list li").eq(0).addClass("find_nav_cur").siblings().removeClass("find_nav_cur");
+                }
+            });
+            var nav_w = $(".find_nav_list li").first().width();
+            $(".sideline").width(nav_w);
+            $(".find_nav_list li").on('click', function() {
+                nav_w = $(this).width();
+                $(".sideline").stop(true);
+                $(".sideline").animate({
+                    left: $(this).position().left
+                }, 300);
+                $(".sideline").animate({
+                    width: nav_w
+                });
+                $(this).addClass("find_nav_cur").siblings().removeClass("find_nav_cur");
+                var fn_w = ($(".find_nav").width() - nav_w) / 2;
+                var fnl_l;
+                var fnl_x = parseInt($(this).position().left);
+                if (fnl_x <= fn_w) {
+                    fnl_l = 0;
+                } else if (fn_w - fnl_x <= flb_w - fl_w) {
+                    fnl_l = flb_w - fl_w;
+                } else {
+                    fnl_l = fn_w - fnl_x;
+                }
+                $(".find_nav_list").animate({
+                    "left": fnl_l
+                }, 300);
+                sessionStorage.left = fnl_l;
+                var c_nav = $(this).find("a").text();
+                navName(c_nav);
+            });
+            var fl_w = $(".find_nav_list").width();
+            var flb_w = $(".find_nav_left").width();
+            $(".find_nav_list").on('touchstart', function(e) {
+                var touch1 = e.originalEvent.targetTouches[0];
+                x1 = touch1.pageX;
+                y1 = touch1.pageY;
+                ty_left = parseInt($(this).css("left"));
+            });
+            $(".find_nav_list").on('touchmove', function(e) {
+                var touch2 = e.originalEvent.targetTouches[0];
+                var x2 = touch2.pageX;
+                var y2 = touch2.pageY;
+                if (ty_left + x2 - x1 >= 0) {
+                    $(this).css("left", 0);
+                } else if (ty_left + x2 - x1 <= flb_w - fl_w) {
+                    $(this).css("left", flb_w - fl_w);
+                } else {
+                    $(this).css("left", ty_left + x2 - x1);
+                }
+                if (Math.abs(y2 - y1) > 0) {
+                    e.preventDefault();
+                }
+            });
+        });
+
+        function navName(c_nav) {
+            switch (c_nav) {
+                case "20元以下":
+                    $("#page01").siblings().hide();
+                    $("#page01").show();
+                    break;
+                case "20元-50元":
+                    $("#page02").siblings().hide();
+                    $("#page02").show();
+                    break;
+                case "50元-80元":
+                    $("#page03").siblings().hide();
+                    $("#page03").show();
+                    break;
+                case "80元-120元":
+                    $("#page04").siblings().hide();
+                    $("#page04").show();
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>

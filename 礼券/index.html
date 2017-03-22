@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>卡券页</title>
+    <link rel="stylesheet" href="css/weui.min.css">
+    <link rel="stylesheet" href="css/jquery-weui.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="wy-coupons__wrapper">
+        <div class="wy-coupons__header bdb1px">
+            <a href="javascript:history.go(-1)" class="icon-back"></a>
+            <span class="wy-coupons__tt">卡券</span>
+            <!--<a href="javascript:;" class="wy-coupons__activate">
+                <img src="images/mine_activation_nav_icon.png" alt="">
+                <span>激活卡券</span>
+            </a>-->
+        </div>
+        <div class="wy-coupons__content">
+            <div class="weui-tab">
+                <div class="weui-navbar">
+                    <a href="#tab1" onclick="return false;" class="weui-navbar__item weui-bar__item--on">
+                        <span>礼券</span>
+                    </a>
+                    <a href="#tab2" onclick="return false;" class="weui-navbar__item">
+                        <span>优惠卡</span>
+                    </a>
+                </div>
+                <div class="weui-tab__bd">
+                    <!-- 这里是上面的a 锚点控制的 ，对应id -->
+                    <div id="tab1" class="weui-tab__bd-item weui-tab__bd-item--active">
+                        <!-- 卡券-->
+                        <ul class="wy-coupon__list">
+                            <li class="coupon__item">
+                                <a href="" class="coupon-a">
+                                    <!-- 
+                                        coupon-gray: 代表过期
+                                        coupon-purple: 代表 自营类
+                                        coupon-green: 代表全品类
+                                        coupon-orange: 代表受限商店
+                                     -->
+                                    <div class="coupon-left coupon-gray">
+                                        <div class="change-block">
+                                            <div class="pro-price">
+                                                <span class="price-sign">¥</span>
+                                                <span class="big-price">5000</span>
+                                            </div>
+                                            <div class="price-info">
+                                                满500.00可用
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="coupon-right">
+                                        <div class="pro-content">
+                                            <div class="pro-tt">自营类(部分商品除)自营类(部分商品除)</div>
+                                            <div class="pro-hd">
+                                                有效期: <br/> 2016.11.16 - 2017.02.27
+                                            </div>
+                                            <div class="pro-ft">备注:生日礼券自营类(部分商品除)自营类(部分商品除)</div>
+                                        </div>
+                                        <!--<div class="pro-btn">
+                                            <span>立即使用</span>
+                                        </div>-->
+
+                                        <!-- 购物车里面使用的是下面这个 -->
+                                        <div class="pro-btn--vertical">
+                                            <span>立即使用</span>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="coupon__item">
+                                <a href="" class="coupon-a">
+                                    <!-- 
+                                        coupon-gray: 代表过期
+                                        coupon-purple: 代表 自营类
+                                        coupon-green: 代表全品类
+                                        coupon-orange: 代表受限商店
+                                     -->
+                                    <div class="coupon-left coupon-orange">
+                                        <div class="change-block">
+                                            <div class="pro-price">
+                                                <span class="price-sign">¥</span>
+                                                <span class="big-price">5000</span>
+                                            </div>
+                                            <div class="price-info">
+                                                满500.00可用
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="coupon-right">
+                                        <div class="pro-content">
+                                            <div class="pro-tt">自营类(部分商品除)自营类(部分商品除)</div>
+                                            <div class="pro-hd">
+                                                有效期: <br/> 2016.11.16 - 2017.02.27
+                                            </div>
+                                            <div class="pro-ft">备注:生日礼券自营类(部分商品除)自营类(部分商品除)</div>
+                                        </div>
+                                        <!--<div class="pro-btn">
+                                            <span>立即使用</span>
+                                        </div>-->
+
+                                        <!-- 已过期-->
+                                        <div class="pro-hasOut">
+                                            <img src="images/coupons_expired.png" alt="">
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="coupon__item">
+                                <a href="" class="coupon-a">
+                                    <!-- 
+                                        coupon-gray: 代表过期
+                                        coupon-purple: 代表 自营类
+                                        coupon-green: 代表全品类
+                                        coupon-orange: 代表受限商店
+                                     -->
+                                    <div class="coupon-left coupon-purple">
+                                        <div class="change-block">
+                                            <div class="pro-price">
+                                                <span class="price-sign">¥</span>
+                                                <span class="big-price">5000</span>
+                                            </div>
+                                            <div class="price-info">
+                                                满500.00可用
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="coupon-right">
+                                        <div class="pro-content">
+                                            <div class="pro-tt">自营类(部分商品除)自营类(部分商品除)</div>
+                                            <div class="pro-hd">
+                                                有效期: <br/> 2016.11.16 - 2017.02.27
+                                            </div>
+                                            <div class="pro-ft">备注:生日礼券自营类(部分商品除)自营类(部分商品除)</div>
+                                        </div>
+                                        <div class="pro-btn">
+                                            <span>立即使用</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="coupon__item">
+                                <a href="" class="coupon-a">
+                                    <!-- 
+                                        coupon-gray: 代表过期
+                                        coupon-purple: 代表 自营类
+                                        coupon-green: 代表全品类
+                                        coupon-orange: 代表受限商店
+                                     -->
+                                    <div class="coupon-left coupon-green">
+                                        <div class="change-block">
+                                            <div class="pro-price">
+                                                <span class="price-sign">¥</span>
+                                                <span class="big-price">5000</span>
+                                            </div>
+                                            <div class="price-info">
+                                                满500.00可用
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="coupon-right">
+                                        <div class="pro-content">
+                                            <div class="pro-tt">自营类(部分商品除)自营类(部分商品除)</div>
+                                            <div class="pro-hd">
+                                                有效期: <br/> 2016.11.16 - 2017.02.27
+                                            </div>
+                                            <div class="pro-ft">备注:生日礼券自营类(部分商品除)自营类(部分商品除)</div>
+                                        </div>
+                                        <div class="pro-btn">
+                                            <span>立即使用</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="tab2" class="weui-tab__bd-item">
+                        <!-- 优惠卡-->
+                        <ul class="wy-coupon__list wy-coupon__list--card">
+                            <li class="coupon__item">
+                                <a href="" class="coupon-a">
+                                    <!-- 
+                                        coupon-gray: 代表过期
+                                        coupon-purple: 代表 自营类
+                                        coupon-green: 代表全品类
+                                        coupon-orange: 代表受限商店
+                                     -->
+                                    <div class="coupon-left coupon-gray">
+                                        <div class="change-block">
+                                            <div class="pro-price">
+                                                <span class="price-sign">¥</span>
+                                                <span class="big-price">5000</span>
+                                            </div>
+                                            <div class="price-info">
+                                                满500.00可用
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="coupon-right">
+                                        <div class="pro-content">
+                                            <div class="pro-tt">自营类(部分商品除)自营类(部分商品除)</div>
+                                            <div class="pro-hd">
+                                                有效期: <br/> 2016.11.16 - 2017.02.27
+                                            </div>
+                                            <div class="pro-ft">备注:生日礼券自营类(部分商品除)自营类(部分商品除)</div>
+                                        </div>
+                                        <!--<div class="pro-btn">
+                                            <span>立即使用</span>
+                                        </div>-->
+                                        <!-- 购物车里面使用的是下面这个 -->
+                                        <div class="pro-btn--vertical">
+                                            <span>立即使用</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="coupon__item">
+                                <a href="" class="coupon-a">
+                                    <!-- 
+                                        coupon-gray: 代表过期
+                                        coupon-purple: 代表 自营类
+                                        coupon-green: 代表全品类
+                                        coupon-orange: 代表受限商店
+                                     -->
+                                    <div class="coupon-left coupon-orange">
+                                        <div class="change-block">
+                                            <div class="pro-price">
+                                                <span class="price-sign">¥</span>
+                                                <span class="big-price">5000</span>
+                                            </div>
+                                            <div class="price-info">
+                                                满500.00可用
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="coupon-right">
+                                        <div class="pro-content">
+                                            <div class="pro-tt">自营类(部分商品除)自营类(部分商品除)</div>
+                                            <div class="pro-hd">
+                                                有效期: <br/> 2016.11.16 - 2017.02.27
+                                            </div>
+                                            <div class="pro-ft">备注:生日礼券自营类(部分商品除)自营类(部分商品除)</div>
+                                        </div>
+                                        <div class="pro-btn">
+                                            <span>立即使用</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="coupon__item">
+                                <a href="" class="coupon-a">
+                                    <!-- 
+                                        coupon-gray: 代表过期
+                                        coupon-purple: 代表 自营类
+                                        coupon-green: 代表全品类
+                                        coupon-orange: 代表受限商店
+                                     -->
+                                    <div class="coupon-left coupon-purple">
+                                        <div class="change-block">
+                                            <div class="pro-price">
+                                                <span class="price-sign">¥</span>
+                                                <span class="big-price">5000</span>
+                                            </div>
+                                            <div class="price-info">
+                                                满500.00可用
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="coupon-right">
+                                        <div class="pro-content">
+                                            <div class="pro-tt">自营类(部分商品除)自营类(部分商品除)</div>
+                                            <div class="pro-hd">
+                                                有效期: <br/> 2016.11.16 - 2017.02.27
+                                            </div>
+                                            <div class="pro-ft">备注:生日礼券自营类(部分商品除)自营类(部分商品除)</div>
+                                        </div>
+                                        <div class="pro-btn">
+                                            <span>立即使用</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="coupon__item">
+                                <a href="" class="coupon-a">
+                                    <!-- 
+                                        coupon-gray: 代表过期
+                                        coupon-purple: 代表 自营类
+                                        coupon-green: 代表全品类
+                                        coupon-orange: 代表受限商店
+                                     -->
+                                    <div class="coupon-left coupon-green">
+                                        <div class="change-block">
+                                            <div class="pro-price">
+                                                <span class="price-sign">¥</span>
+                                                <span class="big-price">5000</span>
+                                            </div>
+                                            <div class="price-info">
+                                                满500.00可用
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="coupon-right">
+                                        <div class="pro-content">
+                                            <div class="pro-tt">自营类(部分商品除)自营类(部分商品除)</div>
+                                            <div class="pro-hd">
+                                                有效期: <br/> 2016.11.16 - 2017.02.27
+                                            </div>
+                                            <div class="pro-ft">备注:生日礼券自营类(部分商品除)自营类(部分商品除)</div>
+                                        </div>
+                                        <div class="pro-btn">
+                                            <span>立即使用</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-2.1.4.js"></script>
+    <script src="js/jquery-weui.min.js"></script>
+    <script src="js/fastclick.js"></script>
+    <script>
+        $(function () {
+            FastClick.attach(document.body);
+        });
+    </script>
+</body>
+
+</html>

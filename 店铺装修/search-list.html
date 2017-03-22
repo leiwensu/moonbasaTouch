@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>搜索页</title>
+    <link rel="stylesheet" href="css/weui.min.css">
+    <link rel="stylesheet" href="css/jquery-weui.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="common-header__wrapper">
+        <!-- 店铺搜索框 -->
+        <div class="m-search_header">
+            <a href="javascript:history.go(-1)" class="icon-back"></a>
+            <section class="search_form">
+                <form action="">
+                    <div class="search_form--inner">
+                        <i class="weui-icon-search"></i>
+                        <input name="search" type="text" id="J-search_form--input" class="search_form--input" value="" placeholder="请输入关键词">
+                    </div>
+                </form>
+            </section>
+            <a href="javascript:;" class="search_btn--navbar" id="J-search_btn--navbar"></a>
+            <a href="javascript:;" class="search_btn displayNone" id="J-search_btn">搜索</a>
+            <!-- 右上角的导航菜单 -->
+            <div class="common-downsel__nav displayNone">
+                <ul>
+                    <li>
+                        <a href="">
+                            <i class="home-icon"></i> 首页
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="s-icon"></i>搜索</a>
+                    </li>
+                    <li>
+                        <a href=""><i class="shopping-icon"></i>购物车</a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="my-icon"></i>我的</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 店铺搜索内容 -->
+        <div class="m-search_wrapper" id="J-search_wrapper">
+            <section class="m-search_con wy-shopSearch">
+                <!-- 所有商品 -->
+                <div class="weui-cells">
+                    <a class="weui-cell weui-cell_access" href="">
+                        <div class="weui-cell__bd">
+                            <p>所有商品</p>
+                        </div>
+                        <div class="weui-cell__ft">
+                        </div>
+                    </a>
+                </div>
+                <!-- 商品分类关键词 -->
+                <div class="wy-shopcat__all bdt1px">
+                    <div class="shopcat-item bdb1px">
+                        <a class="shopcat-link" href="">
+                            <div class="shopcat-tt">
+                                家纺
+                            </div>
+                            <span class="shopcat-more">
+                                查看全部
+                            </span>
+                        </a>
+                        <div class="shopcat-lists">
+                            <a class="shopcat-list__link" href="">
+                                <span>家居饰品(家纺)家居饰品(家纺)</span>
+                            </a>
+                            <a class="shopcat-list__link" href="">
+                                <span>家居服(家纺)</span>
+                            </a>
+                            <a class="shopcat-list__link" href="">
+                                <span>家居饰品(家纺)家居饰品(家纺)</span>
+                            </a>
+                            <a class="shopcat-list__link" href="">
+                                <span>家居服(家纺)</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="shopcat-item bdb1px">
+                        <a class="shopcat-link" href="">
+                            <div class="shopcat-tt">
+                                家纺
+                            </div>
+                            <span class="shopcat-more">
+                                查看全部
+                            </span>
+                        </a>
+                        <div class="shopcat-lists">
+                            <a class="shopcat-list__link" href="">
+                                <span>家居饰品(家纺)家居饰品(家纺)</span>
+                            </a>
+                            <a class="shopcat-list__link" href="">
+                                <span>家居服(家纺)</span>
+                            </a>
+                            <a class="shopcat-list__link" href="">
+                                <span>家居饰品(家纺)家居饰品(家纺)</span>
+                            </a>
+                            <a class="shopcat-list__link" href="">
+                                <span>家居服(家纺)</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="shopcat-item bdb1px">
+                        <a class="shopcat-link" href="">
+                            <div class="shopcat-tt">
+                                家纺
+                            </div>
+                            <span class="shopcat-more">
+                                查看全部
+                            </span>
+                        </a>
+                        <div class="shopcat-lists">
+                            <a class="shopcat-list__link" href="">
+                                <span>家居饰品(家纺)家居饰品(家纺)</span>
+                            </a>
+                            <a class="shopcat-list__link" href="">
+                                <span>家居服(家纺)</span>
+                            </a>
+                            <a class="shopcat-list__link" href="">
+                                <span>家居饰品(家纺)家居饰品(家纺)</span>
+                            </a>
+                            <a class="shopcat-list__link" href="">
+                                <span>家居服(家纺)</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- 遮罩层  -->
+        <div class="common-covermask displayNone"></div>
+    </div>
+    <script src="js/jquery-2.1.4.js"></script>
+    <script src="js/jquery-weui.min.js"></script>
+    <script src="js/fastclick.js"></script>
+    <script>
+        $(function () {
+            FastClick.attach(document.body);
+
+            // 搜索操作
+            (function () {
+                // 搜索框获取焦点显示搜索内容
+                var $searchFormInput = $('#J-search_form--input');
+                var $searchBtnNavbar = $('#J-search_btn--navbar');
+                var $searchBtn = $('#J-search_btn');
+                var $searchWrapper = $('#J-search_wrapper');
+                var $commonDownselNav = $('.common-downsel__nav');
+                var $commonCovermask = $('.common-covermask');
+                // 获取焦点时给body,html添加个class，到时点击热门搜索时需要删除这个class
+                $searchFormInput.on('focus', function () {
+                    $('html,body').addClass('bodyHtmlH');
+                    $searchWrapper.removeClass('displayNone');
+                    $searchBtnNavbar.addClass('displayNone');
+                    $searchBtn.removeClass('displayNone');
+                });
+                // 点击搜索操作
+                $searchBtn.on('click', function () {
+                    $(this).addClass('displayNone');
+                    $searchBtnNavbar.removeClass('displayNone');
+                });
+                // 点击右手边的导航菜单
+                $searchBtnNavbar.on('click', function () {
+                    $commonDownselNav.removeClass('displayNone');
+                    $commonCovermask.removeClass('displayNone');
+                });
+                // 点击遮罩层隐藏导航菜单
+                $commonCovermask.on('click', function () {
+                    $commonDownselNav.addClass('displayNone');
+                    $commonCovermask.addClass('displayNone');
+                });
+            })();
+
+        });
+    </script>
+</body>
+
+</html>

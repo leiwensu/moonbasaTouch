@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>订单详情</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/weui.min.css">
+    <link rel="stylesheet" href="css/jquery-weui.min.css">
+    <link rel="stylesheet" href="css/mystyle.css">
+</head>
+
+<body class="cr_page_grey presale_order_details">
+    <!--顶部标题栏start-->
+    <div class="cr_header_bar">
+        <div class="cr_header_bar_wrap">
+            <div class="cr-header-icon-back"><i></i></div>
+            <div class="cr_header_title">
+                订单详情
+            </div>
+            <div class="cr_header_menu">
+                <a href="javascript:;" class="search_btn--navbar" id="J-search_btn--navbar"></a>
+            </div>
+        </div>
+         <!--待付尾款开始-->
+        <p class="remain_time_bar final_pay_start hidden">付款剩余时间：23时25分12秒</p>
+        <!--付尾款未开始-->
+        <p class="remain_time_bar final_pay_time">付尾款开始时间：2017-02-29 00:00</p>
+    </div>
+    <!--顶部标题栏end-->
+    <!-- 遮罩层  -->
+    <div class="common-covermask jq_hidden"></div>
+    <!-- 右上角的导航菜单 -->
+    <div class="common-downsel__nav jq_hidden">
+        <ul>
+            <li>
+                <a href="">
+                    <i class="home-icon"></i> 首页
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="s-icon"></i>搜索</a>
+            </li>
+            <li>
+                <a href=""><i class="shopping-icon"></i>购物车</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="my-icon"></i>我的</a>
+            </li>
+        </ul>
+    </div>
+    <div class="cr_obligation_main balance-page">
+        <div class="weui-cells">
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <p>订单编号：<span>0012343786</span></p>
+                </div>
+                <div class="weui-cell__ft cr_red_font">等待付款</div>
+            </div>
+        </div>
+        <div class="weui-cells">
+            <div class="weui-cell">
+                <div class="step_container">
+                    <p class="step_text">
+                        <span>付定金</span>
+                        <span>付尾款</span>
+                        <span>发货</span>
+                    </p>
+                    <div class="step_wrap">
+                        <p class="step_progress">
+                            <span class="circle active"></span>
+                            <span class="line"></span>
+                            <span class="circle"></span>
+                            <span class="line"></span>
+                            <span class="circle"></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="weui-cells">
+            <p class="address-bd"></p>
+            <a href="javascript:;" class="weui-cell_access address-link">
+                <div class="weui-cell hidden">
+                    <!--当没有收货地址时，去掉hidden Class-->
+                    <div class="weui-cell__bd">
+                        <i class="icon_cart icon_add"></i>
+                        <p class="add_address_text">点击添加收货地址</p>
+                    </div>
+                </div>
+                <div class="weui-cell receive">
+                    <div class="weui-cell__bd">
+                        <div class="receive_person">
+                            <p>收货人</p>
+                            <p>13631345361</p>
+                        </div>
+                        <p class="receive_address">广州市天河区林和西路261号中泰国际广场</p>
+                    </div>
+                    <div class="weui-cell__ft"></div>
+                </div>
+            </a>
+            <p class="address-bd"></p>
+        </div>
+        <div class="weui-cells weui-cells_checkbox cr_panel_item">
+            <div class="cr_check_item">
+                <div class="weui-cell__bd flex">
+                    <p class="cr_item_title">
+                        <i class="icon_store"></i> 由
+                        <span>梦芭莎</span>发货的商品
+                    </p>
+                </div>
+            </div>
+            <div class="cr_main_item">
+                <div class="weui-cell__bd">
+                    <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+                        <div class="weui-media-box__hd cr_product_img_wrap">
+                            <img class="weui-media-box__thumb cr_product_img" src="http://usr.im/60x80">
+                        </div>
+                        <div class="cr_content_wrap">
+                            <div class="weui-media-box__bd cr_product_title">
+                                <p class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
+                                <p class="cr_property">
+                                    <span>白色</span>
+                                    <span>M</span>
+                                    <span>*1</span>
+                                </p>
+                                <p><span class="cr_zp_span">赠品</span></p>
+                            </div>
+                            <div class="cr_product_price">￥39.00</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="weui-cells">
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <p>支付方式</p>
+                </div>
+                <div class="weui-cell__ft black_font">在线支付</div>
+            </div>
+            <div class="weui-cell">
+                <div class="pay_steps">
+                    <span class="pay_circle active">1</span><!--激活状态添加 active -->
+                    <span class="pay_line"></span>
+                    <span class="pay_circle">2</span>
+                </div>
+                <div class="weui-cell__ft steps_desc">
+                    <div class="steps_item_wrap">
+                        <div class="steps_item cr_red_font"><!--激活状态添加cr_red_font-->
+                            <p>定位：<span>￥30.00</span></p>
+                            <p>待付款</p>
+                        </div>
+                        <div class="steps_item">
+                            <p>尾款：<span>￥130.00</span></p>
+                            <p>未开始</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="weui-cell invoice_info">
+                <div class="weui-cell__bd">
+                    <p>发票信息</p>
+                </div>
+                <div class="grey_font">不开发票</div>
+            </div>
+        </div>
+        <div class="weui-cells cr_sum_wrap grey_font">
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <p>合计</p>
+                </div>
+                <div class="sum_money">
+                    <p>共1件商品</p>
+                    <p>定金：<span>￥30.00</span></p>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="sum_time">
+                    <p class="black_font">未付款 <span class="cr_red_font lg_font">￥136.00</span></p>
+                    <div>下单时间：
+                        <p>2017-02-17 <span>09:26:10</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="weui-cells weui-cells_checkbox cr_check_all_block pay_btn_block">
+            <div class="weui-cell__bd cr_check_all_content">
+                <div class="f1 tl btn_wrap">
+                    <div class="cancel_btn">取消订单</div>
+                    <div class="confirm_btn_disable">去付款</div><!-- 付尾款未开始样式改为confirm_btn_disable 付尾款已开始则为confirm_btn -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery-2.1.4.js"></script>
+    <script src="js/jquery-weui.min.js"></script>
+    <script src="js/fastclick.js"></script>
+    <script>
+        $(function() {
+            FastClick.attach(document.body);
+            var $searchBtnNavbar = $('#J-search_btn--navbar');
+            var $commonDownselNav = $('.common-downsel__nav');
+            var $commonCovermask = $('.common-covermask');
+            // 点击右手边的导航菜单
+            $searchBtnNavbar.on('click', function() {
+                $commonDownselNav.removeClass('jq_hidden');
+                $commonCovermask.removeClass('jq_hidden');
+            });
+            // 点击遮罩层隐藏导航菜单
+            $commonCovermask.on('click', function() {
+                $commonDownselNav.addClass('jq_hidden');
+                $commonCovermask.addClass('jq_hidden');
+            });
+            // 取消订单
+            $(".cancel_btn").on("click",function(){
+                $.confirm({
+                    title: '该订单是预售订单，取消后只退还已支付的尾款，定金恕不退还哦~',
+                    onOK: function () {
+                        //点击确认
+                    },
+                    onCancel: function () {
+                    }
+                    });
+                $.modal({
+                    title: "该订单是预售订单，取消后只退还已支付的尾款，定金恕不退还哦~",
+                    buttons: [
+                        { text: "我再想想", onClick: function(){ console.log(1)} },
+                        { text: "狠心舍弃", className: "default", onClick: function(){ console.log(3)} },
+                    ]
+                    });
+                })
+        });
+    </script>
+</body>
+
+</html>

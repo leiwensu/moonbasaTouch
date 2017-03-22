@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>店铺搜索页</title>
+    <link rel="stylesheet" href="css/weui.min.css">
+    <link rel="stylesheet" href="css/jquery-weui.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="common-header__wrapper">
+        <!-- 搜索框 -->
+        <div class="bdb1px m-search_header">
+            <a href="javascript:history.go(-1)" class="icon-back"></a>
+            <section class="search_form">
+                <form action="">
+                    <div class="search_form--inner">
+                        <i class="weui-icon-search"></i>
+                        <input name="search" type="text" class="search_form--input" value="" placeholder="搜索本店商品">
+                    </div>
+                </form>
+            </section>
+            <a href="javascript:;" class="search-btn__category">
+                <i></i> <span>分类</span>
+            </a>
+            <!-- 已收藏添加 class has-collect-->
+            <a href="javascript:;" id="J-search-btn__collect" class="search-btn__collect">
+                <i></i> <span>收藏</span>
+            </a>
+        </div>
+    </div>
+    <script src="js/jquery-2.1.4.js"></script>
+    <script src="js/jquery-weui.min.js"></script>
+    <script src="js/fastclick.js"></script>
+    <script>
+        $(function () {
+            FastClick.attach(document.body);
+            // 收藏操作
+            var $searchBtnCollect = $('#J-search-btn__collect');
+            $searchBtnCollect.on('click', function () {
+                $(this).addClass('has-collect').find('span').html('已收藏');
+            });
+        });
+    </script>
+</body>
+
+</html>
